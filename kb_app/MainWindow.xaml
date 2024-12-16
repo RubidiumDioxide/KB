@@ -1,0 +1,19 @@
+﻿<Window x:Class="kb_app.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kb_app"
+        mc:Ignorable="d"
+        Title="KB MainWindow" Height="450" Width="800"
+        Background="DarkSeaGreen">
+
+    <StackPanel>
+        <Button x:Name="Employee_Button" Content="Сотрудники" Click="Employee_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
+        <Button x:Name="Department_Button" Content="Отделы" Click="Department_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
+        <Button x:Name="Project_Button" Content="Проекты" Click="Project_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
+        <Button x:Name="Engine_Button" Content="Двигатели" Click="Engine_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
+        <Button x:Name="Armament_Button" Content="Вооружение" Click="Armament_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
+        <Button x:Name="Airframe_Button" Content="Планеры" Click="Airframe_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
+    </StackPanel>
+</Window>
