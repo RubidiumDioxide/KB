@@ -100,7 +100,7 @@ GO*/
 
 ALTER TABLE [Airframe]
 	ADD
-		CONSTRAINT [FK_Aircraft_Airframe] FOREIGN KEY ([Name]) REFERENCES [Aircraft] ([Name])
+		CONSTRAINT [FK_Aircraft_Airframe] FOREIGN KEY ([Name]) REFERENCES [Aircraft] ([Name]) ON DELETE CASCADE 
 GO 
 
 /*ALTER TABLE [Armament]
@@ -124,12 +124,3 @@ ALTER TABLE [Aircraft_Armament]
 		CONSTRAINT [FK_Aircraft_Armament_Aircraft] FOREIGN KEY ([Aircraft]) REFERENCES [Aircraft] ([Name]),
 		CONSTRAINT [FK_Aircraft_Armament_Armament] FOREIGN KEY ([Armament]) REFERENCES [Armament] ([Name])
 GO 
-
-INSERT INTO Engine VALUES
-	('Супер движок 1', 'поршневой v-образный 12-цилиндровый', 123, 76),
-	('Движок от Оки', 'поршневой 2-цилиндровый', 0.1, 2),
-	('Дитя КМПО НК-38', '', 16000000,  7450)
-GO
-
-SELECT * FROM Engine
-GO

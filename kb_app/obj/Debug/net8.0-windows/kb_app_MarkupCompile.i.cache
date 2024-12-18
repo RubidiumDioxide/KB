@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\App.xaml
-82058427930
+3330481493
 
-14-1037385633
+13-1606424650
 229-453824424
-InputForms\ArmamentInput.xaml;MainWindow.xaml;Windows\AirframeWindow.xaml;Windows\ArmamentWindow.xaml;Windows\DepartmentWindow.xaml;Windows\EmployeeWindow.xaml;Windows\EngineWindow.xaml;Windows\ProjectWindow.xaml;
+InputForms\ArmamentInput.xaml;Windows\BaseWindow.xaml;Windows\MainWindow.xaml;
 
-True
+False
 

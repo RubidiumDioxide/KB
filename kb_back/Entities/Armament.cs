@@ -14,4 +14,22 @@ public partial class Armament
     public double Weight { get; set; }
 
     public virtual ICollection<Aircraft> Aircraft { get; set; } = new List<Aircraft>();
+
+    public Armament() { }
+
+    public Armament(List<string> Input)
+    {
+        Name = Input[0];
+        Caliber = double.Parse(Input[1]);
+        FiringRate = double.Parse(Input[2]);
+        Weight = double.Parse(Input[3]);
+    }
+
+    public void Set(List<string> Input)
+    {
+        Name = Input[0];
+        Caliber = double.Parse(Input[1]);
+        FiringRate = double.Parse(Input[2]);
+        Weight = double.Parse(Input[3]);
+    }
 }

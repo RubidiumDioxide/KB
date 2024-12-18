@@ -15,7 +15,7 @@ public partial class KbDbContext : DbContext
     {
     }
 
-    public virtual DbSet<Aircraft> Aircraft { get; set; }
+    public virtual DbSet<Aircraft> Aircrafts { get; set; }
 
     public virtual DbSet<Airframe> Airframes { get; set; }
 
@@ -38,6 +38,8 @@ public partial class KbDbContext : DbContext
         modelBuilder.Entity<Aircraft>(entity =>
         {
             entity.HasKey(e => e.Name).HasName("PK_Name");
+
+            entity.ToTable("Aircraft");
 
             entity.Property(e => e.Name).HasMaxLength(100);
             entity.Property(e => e.Crew).HasDefaultValue((byte)1);
@@ -81,7 +83,6 @@ public partial class KbDbContext : DbContext
 
             entity.HasOne(d => d.NameNavigation).WithOne(p => p.Airframe)
                 .HasForeignKey<Airframe>(d => d.Name)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Aircraft_Airframe");
         });
 

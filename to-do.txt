@@ -1,0 +1,7 @@
+Add columns to Engine entity (MS SQL)
+Make sure null values are set properly (.cs) 
+Make it so that a new Airframe gets automatically created when creating an Aircraft (AircraftTools.cs)				DONE	
+And also that an Airframe gets deleted (via ON DELETE CASCADE) when deleting an Aircraft 					DONE
+Add the ability to view additional aircraft parameters (join w/ Engine, Armament, Airframe)
+Fix Airframe Search 
+Implement proper null initialization (done in Aircraft.cs)
