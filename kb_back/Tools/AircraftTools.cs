@@ -21,14 +21,14 @@ namespace kb_back.Tools
 
         public static List<AircraftViewModel> LoadTable(KbDbContext db)
         {
-            db.Aircrafts.Load();
+            db.Aircraft.Load();
 
-            return db.Aircrafts.Local.ToBindingList().Select(a => new AircraftViewModel { Name = a.Name, Type = a.Type, Crew = a.Crew, Weight = a.Weight, Engine = a.Engine }).ToList();
+            return db.Aircraft.Local.ToBindingList().Select(a => new AircraftViewModel { Name = a.Name, Type = a.Type, Crew = a.Crew, Weight = a.Weight, Engine = a.Engine }).ToList();
         }
 
         public static void Add(KbDbContext db, List<string> Input)
         {
-            db.Aircrafts.Load();
+            db.Aircraft.Load();
             db.Airframes.Load();
 
             Aircraft aircraft = new Aircraft(Input);
@@ -37,12 +37,12 @@ namespace kb_back.Tools
 
             try
             {
-                db.Aircrafts.Add(aircraft);
+                db.Aircraft.Add(aircraft);
                 db.SaveChanges();
             }
             catch (Exception ex)
             {
-                db.Aircrafts.Remove(aircraft);
+                db.Aircraft.Remove(aircraft);
                 throw new Exception(ex.Message);
             }
 
@@ -64,9 +64,9 @@ namespace kb_back.Tools
 
         public static void Edit(KbDbContext db, string name, List<string> Input)
         {
-            db.Aircrafts.Load();
+            db.Aircraft.Load();
 
-            Aircraft aircraft = db.Aircrafts.Find(name);
+            Aircraft aircraft = db.Aircraft.Find(name);
             Aircraft aircraft_reserve = aircraft;
 
             if (aircraft != null)
@@ -87,21 +87,21 @@ namespace kb_back.Tools
 
         public static void Delete(KbDbContext db, string name)
         {
-            db.Aircrafts.Load();
+            db.Aircraft.Load();
             db.Airframes.Load();
 
-            Aircraft aircraft = db.Aircrafts.Find(name);
+            Aircraft aircraft = db.Aircraft.Find(name);
 
             if (aircraft != null)
             {
                 try
                 {
-                    db.Aircrafts.Remove(aircraft);
+                    db.Aircraft.Remove(aircraft);
                     db.SaveChanges();
                 }
                 catch (Exception ex)
                 {
-                    db.Aircrafts.Add(aircraft);
+                    db.Aircraft.Add(aircraft);
                     throw new Exception(ex.Message);
                 }
             }
@@ -109,9 +109,9 @@ namespace kb_back.Tools
 
         public static List<AircraftViewModel> Search(KbDbContext db, List<string> Input)
         {
-            db.Aircrafts.Load();
+            db.Aircraft.Load();
 
-            var itemsSource = db.Aircrafts.Local.ToBindingList().Select(a => new AircraftViewModel { Name = a.Name, Type = a.Type, Crew = a.Crew, Weight = a.Weight, Engine = a.Engine });
+            var itemsSource = db.Aircraft.Local.ToBindingList().Select(a => new AircraftViewModel { Name = a.Name, Type = a.Type, Crew = a.Crew, Weight = a.Weight, Engine = a.Engine });
 
             if (Input[0] != "" && Input[0] != "Name (string)")
             {
@@ -164,6 +164,59 @@ namespace kb_back.Tools
             }
 
             return itemsSource.ToList();
+        }
+
+        public static void AddArmament(KbDbContext db, string aircraftName, string armamentName)
+        {
+            db.Aircraft.Load();
+            db.Armaments.Load();
+            db.AircraftArmaments.Load();
+
+            if (db.AircraftArmaments.Find(aircraftName, armamentName) == null)
+            {
+                AircraftArmament aircraftArmament = new AircraftArmament()
+                {
+                    Aircraft = aircraftName,
+                    Armament = armamentName,
+                    Quantity = 1
+                };
+
+                try
+                {
+                    db.AircraftArmaments.Add(aircraftArmament);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    db.AircraftArmaments.Remove(aircraftArmament);
+                    throw new Exception(ex.Message);
+                }
+            }
+            else
+            {
+                AircraftArmament aircraftArmament = db.AircraftArmaments.Find(aircraftName, armamentName);
+                aircraftArmament.Quantity += 1;
+                db.SaveChanges();
+            }
+        }
+
+        public static void ClearArmament(KbDbContext db, string aircraftName)
+        {
+            db.Aircraft.Load();
+            db.AircraftArmaments.Load();
+
+            try
+            {
+                foreach (AircraftArmament aa in db.AircraftArmaments.Where(a => a.Aircraft == aircraftName).ToList())
+                {
+                    db.AircraftArmaments.Remove(aa);
+                }
+                db.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);    
+            }
         }
     }
 }

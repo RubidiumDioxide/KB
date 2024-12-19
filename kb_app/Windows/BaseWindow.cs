@@ -128,7 +128,7 @@ namespace kb_app.Windows
             TableRefresh();
         }
 
-        private protected void Enter_Button_Click(object sender, RoutedEventArgs e)
+        private protected virtual void Enter_Button_Click(object sender, RoutedEventArgs e)
         {
             Input = new List<string>();
 

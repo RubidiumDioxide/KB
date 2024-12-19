@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 
-namespace kb_back.Entities;
+namespace kb_back;
 
 public partial class Airframe
 {
@@ -20,12 +21,6 @@ public partial class Airframe
     public Airframe(List<string> Input)
     {
         Name = Input[0];
-        try { WingProfile = Input[1]; }
-        catch { WingProfile = null; }
-        try { Length = double.Parse(Input[2]); }
-        catch { Length = null; }
-        try { Wingspan = double.Parse(Input[3]); }
-        catch { Wingspan = null; }
     }
 
     public void Set(List<string> Input)
@@ -35,4 +30,5 @@ public partial class Airframe
         Length = double.Parse(Input[2]);
         Wingspan = double.Parse(Input[3]);
     }
+
 }

@@ -1,0 +1,16 @@
+﻿<Window x:Class="kb_app.Windows.ShowAircraftWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kb_app.Windows"
+        mc:Ignorable="d"
+        Title="ShowAircraftWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock x:Name="Engine_TextBlock"/>
+            <TextBlock x:Name="Airframe_TextBlock"/>
+            <DataGrid x:Name="AircraftsArmament_Table" AutoGenerateColumns="True" IsReadOnly="True"/>
+        </StackPanel>
+    </Grid>
+</Window>

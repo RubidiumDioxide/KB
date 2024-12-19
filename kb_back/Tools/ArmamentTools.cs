@@ -1,5 +1,4 @@
-﻿using kb_back.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 using System;
 using System.Collections.Generic;
@@ -26,6 +25,16 @@ namespace kb_back.Tools
                 return l;
             }
         }
+
+        public class AircraftsArmamentViewModel
+        {
+            public string Name { get; set; } = null!;
+            public double Caliber { get; set; }
+            public double FiringRate { get; set; }
+            public double Weight { get; set; }
+            public byte Quantity { get; set; }
+        }
+
 
         public static List<ArmamentViewModel> LoadTable(KbDbContext db)
         {
@@ -143,6 +152,24 @@ namespace kb_back.Tools
             }
 
             return itemsSource.ToList();
+        }
+
+        public static List<AircraftsArmamentViewModel> GetArmamentsList(KbDbContext db, string aircraftName)
+        {
+            db.Armaments.Load();
+            db.AircraftArmaments.Load();
+
+            return db.AircraftArmaments.Local.ToBindingList().Where(aa => aa.Aircraft == aircraftName).Join(db.Armaments.Local,
+                aa => aa.Armament,
+                a => a.Name, 
+                (aa, a) => new AircraftsArmamentViewModel
+                {
+                    Name = a.Name,
+                    Caliber = a.Caliber,
+                    FiringRate = a.FiringRate,
+                    Weight = a.Weight,
+                    Quantity = aa.Quantity
+                }).ToList();
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using kb_back.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 using System;
 using System.Collections.Generic;
@@ -141,6 +140,23 @@ namespace kb_back.Tools
             }
 
             return itemsSource.ToList();
+        }
+        public static string GetAirframeString(KbDbContext db, string aircraftName)
+        {
+            db.Airframes.Load();
+            db.Aircraft.Load();
+
+            Aircraft aircraft = db.Aircraft.Find(aircraftName);
+            Airframe airframe = db.Airframes.Find(aircraftName);
+
+            if (aircraft != null && airframe != null)
+            {
+                return airframe.Name + airframe.WingProfile + airframe.Length.ToString() + airframe.Wingspan.ToString();
+            }
+            else
+            {
+                return "";
+            }
         }
     }
 }

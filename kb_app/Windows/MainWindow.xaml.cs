@@ -1,5 +1,4 @@
-﻿using kb_back.Entities;
-using System.Text;
+﻿using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,6 +11,7 @@ using System.Windows.Shapes;
 
 //using Microsoft.EntityFrameworkCore;       remove the usage of EF to kb_back if possible
 using System.Data;
+using kb_back;
 
 namespace kb_app.Windows
 {

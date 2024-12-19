@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using kb_back.Entities;
 
-namespace kb_back.Entities;
+namespace kb_back;
 
 public partial class Armament
 {
@@ -13,12 +14,11 @@ public partial class Armament
 
     public double Weight { get; set; }
 
-    public virtual ICollection<Aircraft> Aircraft { get; set; } = new List<Aircraft>();
+    public virtual ICollection<AircraftArmament> AircraftArmaments { get; set; } = new List<AircraftArmament>();
 
     public Armament() { }
 
-    public Armament(List<string> Input)
-    {
+    public Armament(List<string> Input) { 
         Name = Input[0];
         Caliber = double.Parse(Input[1]);
         FiringRate = double.Parse(Input[2]);

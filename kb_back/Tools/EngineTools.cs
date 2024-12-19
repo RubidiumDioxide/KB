@@ -1,5 +1,4 @@
-﻿using kb_back.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 using System;
 using System.Collections.Generic;
@@ -142,6 +141,23 @@ namespace kb_back.Tools
             }
 
             return itemsSource.ToList();
+        }
+
+        public static string GetEngineString(KbDbContext db, string aircraftName)
+        {
+            db.Engines.Load();
+            db.Aircraft.Load();
+
+            Aircraft aircraft = db.Aircraft.Find(aircraftName);
+            Engine engine = db.Engines.Find(aircraft.Engine);
+
+            if (aircraft != null && engine != null)
+            { 
+                return engine.Name + engine.Type + engine.Power.ToString() + engine.Weight.ToString();   
+            }
+            else{
+                return "";
+            }
         }
     }
 }
