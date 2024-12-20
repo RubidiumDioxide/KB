@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using kb_back.Entities;
+//using kb_back.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace kb_back;
@@ -49,6 +49,7 @@ public partial class KbDbContext : DbContext
 
             entity.HasOne(d => d.EngineNavigation).WithMany(p => p.Aircraft)
                 .HasForeignKey(d => d.Engine)
+                .OnDelete(DeleteBehavior.SetNull)
                 .HasConstraintName("FK_Engine_Aircraft");
         });
 
@@ -102,15 +103,14 @@ public partial class KbDbContext : DbContext
 
             entity.ToTable("Department");
 
-            entity.HasIndex(e => e.Adress, "Adress_unique").IsUnique();
-
-            entity.HasIndex(e => e.Adress, "UQ__Departme__08F62FE5261DD6E5").IsUnique();
+            entity.HasIndex(e => e.Adress, "UQ__Departme__08F62FE56209D06E").IsUnique();
 
             entity.Property(e => e.Name).HasMaxLength(100);
             entity.Property(e => e.Adress).HasMaxLength(200);
 
             entity.HasOne(d => d.DirectorNavigation).WithMany(p => p.Departments)
                 .HasForeignKey(d => d.Director)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Employee_Department");
         });
 
@@ -137,10 +137,12 @@ public partial class KbDbContext : DbContext
 
             entity.HasOne(d => d.CurrentProjectNavigation).WithMany(p => p.Employees)
                 .HasForeignKey(d => d.CurrentProject)
+                .OnDelete(DeleteBehavior.SetNull)
                 .HasConstraintName("FK_Project_Employee");
 
             entity.HasOne(d => d.DepartmentNavigation).WithMany(p => p.Employees)
                 .HasForeignKey(d => d.Department)
+                .OnDelete(DeleteBehavior.SetNull)
                 .HasConstraintName("FK_Department_Employee");
         });
 
@@ -160,7 +162,7 @@ public partial class KbDbContext : DbContext
 
             entity.ToTable("Project");
 
-            entity.HasIndex(e => e.Name, "UQ__Project__737584F612D7E80A").IsUnique();
+            entity.HasIndex(e => e.Name, "UQ__Project__737584F641C86B19").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Aircraft).HasMaxLength(100);
@@ -169,7 +171,9 @@ public partial class KbDbContext : DbContext
             entity.Property(e => e.DateFinished).HasColumnName("Date_finished");
             entity.Property(e => e.Department).HasMaxLength(100);
             entity.Property(e => e.Name).HasMaxLength(200);
-            entity.Property(e => e.Status).HasMaxLength(50);
+            entity.Property(e => e.Status)
+                .HasMaxLength(50)
+                .HasDefaultValue("начат");
 
             entity.HasOne(d => d.AircraftNavigation).WithMany(p => p.Projects)
                 .HasForeignKey(d => d.Aircraft)
@@ -178,10 +182,12 @@ public partial class KbDbContext : DbContext
 
             entity.HasOne(d => d.ChiefDesignerNavigation).WithMany(p => p.Projects)
                 .HasForeignKey(d => d.ChiefDesigner)
+                .OnDelete(DeleteBehavior.SetNull)
                 .HasConstraintName("FK_Employee_Project");
 
             entity.HasOne(d => d.DepartmentNavigation).WithMany(p => p.Projects)
                 .HasForeignKey(d => d.Department)
+                .OnDelete(DeleteBehavior.SetNull)
                 .HasConstraintName("FK_Department_Project");
         });
 

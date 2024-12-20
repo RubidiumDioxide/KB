@@ -1,4 +1,4 @@
-﻿using kb_back.Entities;
+﻿//using kb_back.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace kb_back.Tools

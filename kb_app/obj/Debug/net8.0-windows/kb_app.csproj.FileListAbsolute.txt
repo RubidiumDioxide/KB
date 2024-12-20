@@ -3,6 +3,7 @@ C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\InputForms\ArmamentInput.g.cs
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\Windows\BaseWindow.g.cs
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\Windows\MainWindow.g.cs
+C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\Windows\ShowAircraftWindow.g.cs
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\kb_app_MarkupCompile.cache
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\kb_app_MarkupCompile.lref
@@ -59,6 +60,7 @@ C:\Users\User\storage\courses\курсач по бд\KB\kb_app\bin\Debug\net8.0-
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\App.baml
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\Windows\BaseWindow.baml
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\Windows\MainWindow.baml
+C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\Windows\ShowAircraftWindow.baml
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\kb_app.g.resources
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\kb_app.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\kb_app.AssemblyInfoInputs.cache
@@ -71,5 +73,3 @@ C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\kb_app.pdb
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\kb_app.genruntimeconfig.cache
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\ref\kb_app.dll
-C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\Windows\ShowAircraftWindow.g.cs
-C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\Windows\ShowAircraftWindow.baml

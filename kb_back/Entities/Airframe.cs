@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
 
 namespace kb_back;
 
@@ -30,5 +29,4 @@ public partial class Airframe
         Length = double.Parse(Input[2]);
         Wingspan = double.Parse(Input[3]);
     }
-
 }

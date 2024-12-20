@@ -26,22 +26,22 @@ namespace kb_app.Windows
 {
     public class EngineWindow : BaseWindow
     {
+        TextBox Name_Textbox = new TextBox() { Text = "Name (string)" };
+        TextBox Type_Textbox = new TextBox() { Text = "Type (string)" };
+        TextBox Power_Textbox = new TextBox() { Text = "Power (double)" };
+        TextBox Weight_Textbox = new TextBox() { Text = "Weight (double)" };
+
         public EngineWindow() : base()
         {
             InitializeComponent();
             TableRefresh();
 
-            TextBox Name_Texbox = new TextBox() { Text = "Name (string)" };
-            TextBox Type_Texbox = new TextBox() { Text = "Type (string)" };
-            TextBox Power_Texbox = new TextBox() { Text = "Power (double)" };
-            TextBox Weight_Texbox = new TextBox() { Text = "Weight (double)" };
-
             StackPanel sp = Input_StackPanel;
             sp.Children.Remove(Enter_Button);
-            sp.Children.Add(Name_Texbox);
-            sp.Children.Add(Type_Texbox);
-            sp.Children.Add(Power_Texbox);
-            sp.Children.Add(Weight_Texbox);
+            sp.Children.Add(Name_Textbox);
+            sp.Children.Add(Type_Textbox);
+            sp.Children.Add(Power_Textbox);
+            sp.Children.Add(Weight_Textbox);
             sp.Children.Add(Enter_Button);
 
             Input_GroupBox.Content = sp;
@@ -60,6 +60,8 @@ namespace kb_app.Windows
                 List<string> l = new List<string> { "Name (string)", "Type (string)", "Power (double)", "Weight (double)" };
                 SetInputTextBoxes(l);
 
+                Name_Textbox.IsEnabled = true;
+
                 Enter_Button.IsEnabled = false;
                 Enter_Button.Visibility = Visibility.Collapsed;
             }
@@ -67,6 +69,8 @@ namespace kb_app.Windows
             if (this.action_type == "edit")
             {
                 SetInputTextBoxes(_l);
+
+                Name_Textbox.IsEnabled = false;
 
                 Enter_Button.IsEnabled = true;
                 Enter_Button.Visibility = Visibility.Visible;

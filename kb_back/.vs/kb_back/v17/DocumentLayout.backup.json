@@ -3,25 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\Windows\\DepartmentWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{745FD4BB-1C9D-40DB-8592-279429F803F8}|..\\kb_app\\kb_app.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_app\\windows\\enginewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{745FD4BB-1C9D-40DB-8592-279429F803F8}|..\\kb_app\\kb_app.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_app\\windows\\basewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_back\\tools\\enginetools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|solutionrelative:tools\\enginetools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Tools\\DepartmentTools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tools\\DepartmentTools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{745FD4BB-1C9D-40DB-8592-279429F803F8}|..\\kb_app\\kb_app.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_app\\windows\\departmentwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_back\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|solutionrelative:entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_back\\tools\\employeetools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|solutionrelative:tools\\employeetools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{745FD4BB-1C9D-40DB-8592-279429F803F8}|..\\kb_app\\kb_app.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_app\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_back\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|solutionrelative:entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_back\\tools\\departmenttools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|solutionrelative:tools\\departmenttools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,7 +32,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 161,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,87 +40,78 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\Windows\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "..\\kb_app\\Windows\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\Windows\\MainWindow.xaml.cs",
-              "RelativeToolTip": "..\\kb_app\\Windows\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAxAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "EngineWindow.cs",
+              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\Windows\\EngineWindow.cs",
+              "RelativeDocumentMoniker": "..\\kb_app\\Windows\\EngineWindow.cs",
+              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\Windows\\EngineWindow.cs",
+              "RelativeToolTip": "..\\kb_app\\Windows\\EngineWindow.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAQwD4AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T13:21:18.732Z",
+              "WhenOpened": "2024-12-20T16:39:10.201Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BaseWindow.cs",
-              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\Windows\\BaseWindow.cs",
-              "RelativeDocumentMoniker": "..\\kb_app\\Windows\\BaseWindow.cs",
-              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\Windows\\BaseWindow.cs",
-              "RelativeToolTip": "..\\kb_app\\Windows\\BaseWindow.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAhwFUAAAAQAAAAAAAAAA==",
+              "Title": "EngineTools.cs",
+              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Tools\\EngineTools.cs",
+              "RelativeDocumentMoniker": "Tools\\EngineTools.cs",
+              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Tools\\EngineTools.cs",
+              "RelativeToolTip": "Tools\\EngineTools.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T14:52:29.703Z",
+              "WhenOpened": "2024-12-20T16:39:03.073Z",
               "EditorCaption": ""
             },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EmployeeTools.cs",
-              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Tools\\EmployeeTools.cs",
-              "RelativeDocumentMoniker": "Tools\\EmployeeTools.cs",
-              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Tools\\EmployeeTools.cs",
-              "RelativeToolTip": "Tools\\EmployeeTools.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAADwvxwAAADSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T13:52:35.94Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 161,
-          "SelectedChildIndex": 1,
-          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DepartmentTools.cs",
-              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Tools\\DepartmentTools.cs",
-              "RelativeDocumentMoniker": "Tools\\DepartmentTools.cs",
-              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Tools\\DepartmentTools.cs",
-              "RelativeToolTip": "Tools\\DepartmentTools.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA3wBYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T07:37:52.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "DepartmentWindow.cs",
               "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\Windows\\DepartmentWindow.cs",
               "RelativeDocumentMoniker": "..\\kb_app\\Windows\\DepartmentWindow.cs",
               "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\Windows\\DepartmentWindow.cs",
               "RelativeToolTip": "..\\kb_app\\Windows\\DepartmentWindow.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwB8AAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAqwDEAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T07:32:48.635Z",
+              "WhenOpened": "2024-12-20T16:31:03.276Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Department.cs",
               "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Entities\\Department.cs",
               "RelativeDocumentMoniker": "Entities\\Department.cs",
               "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Entities\\Department.cs",
               "RelativeToolTip": "Entities\\Department.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAuwCwAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAADwvyQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T07:33:18.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T16:27:36.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmployeeTools.cs",
+              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Tools\\EmployeeTools.cs",
+              "RelativeDocumentMoniker": "Tools\\EmployeeTools.cs",
+              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Tools\\EmployeeTools.cs",
+              "RelativeToolTip": "Tools\\EmployeeTools.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T16:26:48.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DepartmentTools.cs",
+              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Tools\\DepartmentTools.cs",
+              "RelativeDocumentMoniker": "Tools\\DepartmentTools.cs",
+              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Tools\\DepartmentTools.cs",
+              "RelativeToolTip": "Tools\\DepartmentTools.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T16:26:42.428Z"
             }
           ]
         }

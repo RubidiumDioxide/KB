@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+//using kb_back.Entities;
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace kb_back.Tools
 {
@@ -28,8 +30,8 @@ namespace kb_back.Tools
             db.Departments.Load();
             db.Employees.Load();
 
-            return db.Departments.Local.ToBindingList().Join(
-                db.Employees.Local.ToBindingList(),
+            return db.Departments.Join(
+                db.Employees,
                 d => d.Director, 
                 e => e.Id, 
                 (d, e) => new DepartmentViewModel { 

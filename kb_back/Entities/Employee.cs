@@ -65,7 +65,7 @@ public partial class Employee
             try { LastName = Input[3]; }
             catch { LastName = null!; }
         }
-        
+
         DateOfBirth = DateOnly.Parse(Input[4]);
         Position = Input[5];
 
@@ -77,10 +77,10 @@ public partial class Employee
         }
 
         YearsOfExperience = byte.Parse(Input[7]);
-        
+
         try { CurrentProject = int.Parse(Input[8]); }
         catch { CurrentProject = null!; }
-        
+
         Salary = decimal.Parse(Input[9]);
     }
 

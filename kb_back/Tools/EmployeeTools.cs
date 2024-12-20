@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+//using kb_back.Entities;
 
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ namespace kb_back.Tools
         {
             db.Employees.Load();
 
-            return db.Employees.Local.ToBindingList().Select(e => new EmployeeViewModel { Id = e.Id, Surname = e.Surname, FirstName = e.FirstName, LastName = e.LastName, DateOfBirth = e.DateOfBirth, Position = e.Position, Department = e.Department, YearsOfExperience = e.YearsOfExperience, CurrentProject = e.CurrentProject, Salary = e.Salary }).ToList();
+            return db.Employees.Select(e => new EmployeeViewModel { Id = e.Id, Surname = e.Surname, FirstName = e.FirstName, LastName = e.LastName, DateOfBirth = e.DateOfBirth, Position = e.Position, Department = e.Department, YearsOfExperience = e.YearsOfExperience, CurrentProject = e.CurrentProject, Salary = e.Salary }).ToList();
         }
 
         public static void Add(KbDbContext db, List<string> Input)

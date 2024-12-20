@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace kb_back.Entities;
+namespace kb_back;
 
 public partial class AircraftArmament
 {

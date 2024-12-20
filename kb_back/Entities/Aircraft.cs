@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using kb_back.Entities;
-using Microsoft.EntityFrameworkCore.Storage.Json;
 
 namespace kb_back;
 

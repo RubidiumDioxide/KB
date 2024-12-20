@@ -37,6 +37,7 @@ namespace kb_app.Windows
         {
             Table.ItemsSource = null;
             Table.ItemsSource = DepartmentTools.LoadTable(MainWindow.db);
+            //MessageBox.Show("");
         }
 
         private protected override void InputLayoutUpdate(List<string> _l)
@@ -46,6 +47,8 @@ namespace kb_app.Windows
                 List<string> l = new List<string> {"Name (string)", "Adress(string)", "Director (int)"};
                 SetInputTextBoxes(l);
 
+                Name_TextBox.IsEnabled = true;
+
                 Enter_Button.IsEnabled = false;
                 Enter_Button.Visibility = Visibility.Collapsed;
             }
@@ -53,6 +56,8 @@ namespace kb_app.Windows
             if (action_type == "edit")
             {
                 SetInputTextBoxes(_l);
+
+                Name_TextBox.IsEnabled = false;
 
                 Enter_Button.IsEnabled = true;
                 Enter_Button.Visibility = Visibility.Visible;

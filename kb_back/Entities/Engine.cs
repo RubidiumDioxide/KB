@@ -21,8 +21,8 @@ public partial class Engine
     {
         Name = Input[0];
         Type = Input[1];
-        Power = double.Parse(Input[2]); 
-        Weight = double.Parse(Input[3]);   
+        Power = double.Parse(Input[2]);
+        Weight = double.Parse(Input[3]);
     }
 
     public void Set(List<string> Input)
