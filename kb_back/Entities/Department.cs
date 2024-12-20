@@ -16,4 +16,32 @@ public partial class Department
     public virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
 
     public virtual ICollection<Project> Projects { get; set; } = new List<Project>();
+
+    public Department() { }
+
+    public Department(List<string> Input)
+    {
+        Set(Input);
+    }
+
+    public Department(Department d) 
+    {
+        Name = d.Name; 
+        Adress = d.Adress; 
+        Director = d.Director; 
+    }
+
+    public void Set(List<string> Input)
+    {
+        Name = Input[0];
+        Adress = Input[1];
+        Director = int.Parse(Input[2]);  
+    }
+
+    public void Set(Department d)
+    {
+        Name = d.Name;
+        Adress = d.Adress;
+        Director = d.Director;
+    }
 }

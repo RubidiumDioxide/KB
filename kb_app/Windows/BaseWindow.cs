@@ -63,6 +63,10 @@ namespace kb_app.Windows
                 {
                     EmployeeTools.Add(MainWindow.db, Input);
                 }
+                if (this.GetType() == typeof(DepartmentWindow))
+                {
+                    DepartmentTools.Add(MainWindow.db, Input);
+                }
             }
             catch (Exception ex)
             {
@@ -77,8 +81,6 @@ namespace kb_app.Windows
             if (Table.SelectedItems.Count > 0)
             {
                 action_type = "edit";
-
-                //get Name of the selected row and it's value list 
                 dynamic value = Table.SelectedItem;
                 name = value.Name;
                 List<string> l = value.GetValues();
@@ -98,9 +100,8 @@ namespace kb_app.Windows
 
             if (Table.SelectedItems.Count > 0)
             {
-                //get Name of the selected row 
                 dynamic value = Table.SelectedItem;
-                //delete function
+
                 try
                 {
                     if (this.GetType() == typeof(ArmamentWindow))
@@ -114,6 +115,10 @@ namespace kb_app.Windows
                     if (this.GetType() == typeof(AircraftWindow))
                     {
                         AircraftTools.Delete(MainWindow.db, value.Name);
+                    }
+                    if (this.GetType() == typeof(DepartmentWindow))
+                    {
+                        DepartmentTools.Delete(MainWindow.db, value.Name);
                     }
                 }
                 catch (Exception ex)
@@ -161,6 +166,10 @@ namespace kb_app.Windows
                     {
                         AirframeTools.Edit(MainWindow.db, name, Input);
                     }
+                    if (this.GetType() == typeof(DepartmentWindow))
+                    {
+                        DepartmentTools.Edit(MainWindow.db, name, Input);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -205,6 +214,10 @@ namespace kb_app.Windows
             if (this.GetType() == typeof(EmployeeWindow))
             {
                 Table.ItemsSource = EmployeeTools.Search(MainWindow.db, Input);
+            }
+            if (this.GetType() == typeof(DepartmentWindow))
+            {
+                Table.ItemsSource = DepartmentTools.Search(MainWindow.db, Input);
             }
         }
 

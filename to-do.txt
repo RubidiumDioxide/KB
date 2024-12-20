@@ -5,4 +5,7 @@ And also that an Airframe gets deleted (via ON DELETE CASCADE) when deleting an 
 Add the ability to view additional aircraft parameters (join w/ Engine, Armament, Airframe)
 Fix Airframe Search 
 Implement proper null initialization 
-Employee entity: change the YearsOfexperience constraint so that it can be 0
+
+MS SQL: 
+Employee entity: change the YearsOfexperience constraint so that it can be 0 
+Department-dependant entities: add ON UPDATE CASCADE

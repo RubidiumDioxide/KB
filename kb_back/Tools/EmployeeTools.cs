@@ -26,8 +26,7 @@ namespace kb_back.Tools
 
             public List<string> GetValues()
             {
-                List<string> l = new List<string> { Id.ToString(), Surname, FirstName, LastName, DateOfBirth.ToString(), Position, Department, YearsOfExperience.ToString(), CurrentProject.ToString(), Salary.ToString() };
-                return l;
+                return new List<string> { Id.ToString(), Surname, FirstName, LastName, DateOfBirth.ToString(), Position, Department, YearsOfExperience.ToString(), CurrentProject.ToString(), Salary.ToString() };
             }            
         }
 
