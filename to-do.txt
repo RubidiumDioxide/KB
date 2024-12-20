@@ -4,4 +4,5 @@ Make it so that a new Airframe gets automatically created when creating an Aircr
 And also that an Airframe gets deleted (via ON DELETE CASCADE) when deleting an Aircraft 					DONE
 Add the ability to view additional aircraft parameters (join w/ Engine, Armament, Airframe)
 Fix Airframe Search 
-Implement proper null initialization (done in Aircraft.cs)
+Implement proper null initialization 
+Employee entity: change the YearsOfexperience constraint so that it can be 0

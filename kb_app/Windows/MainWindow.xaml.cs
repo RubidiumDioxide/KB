@@ -21,9 +21,9 @@ namespace kb_app.Windows
     public partial class MainWindow : Window
     {
         public static KbDbContext db;
-        /*public EmployeeWindow employeeWindow;
-        public DepartmentWindow departmentWindow;
-        public ProjectWindow projectWindow*/
+        public EmployeeWindow employeeWindow;
+        //public DepartmentWindow departmentWindow;
+        //public ProjectWindow projectWindow;
         public EngineWindow engineWindow;
         public ArmamentWindow armamentWindow;
         public AirframeWindow airframeWindow;
@@ -39,6 +39,13 @@ namespace kb_app.Windows
 
         private void Employee_Button_Click(object sender, RoutedEventArgs e)
         {
+            if (employeeWindow == null)
+            {
+                employeeWindow = new EmployeeWindow();
+            }
+
+            employeeWindow.Show();
+            employeeWindow.Focus();
         }
 
         private void Department_Button_Click(object sender, RoutedEventArgs e)

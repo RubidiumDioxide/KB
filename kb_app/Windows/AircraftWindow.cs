@@ -48,12 +48,13 @@ namespace kb_app.Windows
             TableRefresh();
 
             StackPanel sp = Input_StackPanel;
-            sp.Children.Remove(Enter_Button);
+            sp.Children.Clear();
             sp.Children.Add(Name_Textbox);
             sp.Children.Add(Type_Textbox);
             sp.Children.Add(Crew_Textbox);
             sp.Children.Add(Weight_Textbox);
             sp.Children.Add(Engine_Textbox);
+            Input_GroupBox.Content = sp;
 
 
             this.grid.Children.Add(Armament_Textbox);
@@ -63,8 +64,6 @@ namespace kb_app.Windows
             Armament_Textbox.Visibility = Visibility.Collapsed;
 
             sp.Children.Add(Enter_Button);
-
-            Input_GroupBox.Content = sp;
 
             Controls_StackPanel.Children.Add(Show_Button);
             Controls_StackPanel.Children.Add(AddArmament_Button);

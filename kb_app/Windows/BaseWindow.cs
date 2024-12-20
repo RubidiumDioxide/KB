@@ -40,7 +40,7 @@ namespace kb_app.Windows
 
             Input = new List<string>();
 
-            foreach (TextBox t in Extensions.FindVisualChildren<TextBox>(this))
+            foreach (TextBox t in Extensions.FindVisualChildren<TextBox>(this.Input_StackPanel))
             {
                 Input.Add(t.Text);
             }
@@ -59,6 +59,10 @@ namespace kb_app.Windows
                 {
                     AircraftTools.Add(MainWindow.db, Input);
                 }
+                if(this.GetType() == typeof(EmployeeWindow))
+                {
+                    EmployeeTools.Add(MainWindow.db, Input);
+                }
             }
             catch (Exception ex)
             {
@@ -68,7 +72,7 @@ namespace kb_app.Windows
             TableRefresh();
         }
 
-        private protected void Edit_Button_Click(object sender, RoutedEventArgs e)
+        private protected virtual void Edit_Button_Click(object sender, RoutedEventArgs e)
         {
             if (Table.SelectedItems.Count > 0)
             {
@@ -87,7 +91,7 @@ namespace kb_app.Windows
             }
         }
 
-        private protected void Delete_Button_Click(object sender, RoutedEventArgs e)
+        private protected virtual void Delete_Button_Click(object sender, RoutedEventArgs e)
         {
             action_type = "delete";
             InputLayoutUpdate(null);
@@ -170,7 +174,7 @@ namespace kb_app.Windows
             TableRefresh();
         }
 
-        private protected void Search_Button_Click(object sender, RoutedEventArgs e)
+        private protected virtual void Search_Button_Click(object sender, RoutedEventArgs e)
         {
             action_type = "search";
 
@@ -197,6 +201,10 @@ namespace kb_app.Windows
             if (this.GetType() == typeof(AirframeWindow))
             {
                 Table.ItemsSource = AirframeTools.Search(MainWindow.db, Input);
+            }
+            if (this.GetType() == typeof(EmployeeWindow))
+            {
+                Table.ItemsSource = EmployeeTools.Search(MainWindow.db, Input);
             }
         }
 
