@@ -47,15 +47,14 @@ namespace kb_app.Windows
             InitializeComponent();
             TableRefresh();
 
-            StackPanel sp = Input_StackPanel;
-            sp.Children.Clear();
-            sp.Children.Add(Name_Textbox);
-            sp.Children.Add(Type_Textbox);
-            sp.Children.Add(Crew_Textbox);
-            sp.Children.Add(Weight_Textbox);
-            sp.Children.Add(Engine_Textbox);
-            Input_GroupBox.Content = sp;
-
+            Input_StackPanel.Children.Clear();
+            Input_StackPanel.Children.Add(Name_Textbox);
+            Input_StackPanel.Children.Add(Type_Textbox);
+            Input_StackPanel.Children.Add(Crew_Textbox);
+            Input_StackPanel.Children.Add(Weight_Textbox);
+            Input_StackPanel.Children.Add(Engine_Textbox);
+            Input_StackPanel.Children.Add(Enter_Button); 
+            Input_GroupBox.Content = Input_StackPanel;
 
             this.grid.Children.Add(Armament_Textbox);
             Armament_Textbox.SetValue(Grid.RowProperty, 2);
@@ -63,14 +62,12 @@ namespace kb_app.Windows
             Armament_Textbox.IsEnabled = false;
             Armament_Textbox.Visibility = Visibility.Collapsed;
 
-            sp.Children.Add(Enter_Button);
-
             Controls_StackPanel.Children.Add(Show_Button);
             Controls_StackPanel.Children.Add(AddArmament_Button);
             Controls_StackPanel.Children.Add(ClearArmament_Button);
             Show_Button.IsEnabled = true;
             AddArmament_Button.IsEnabled = true;
-            Show_Button.IsEnabled = true;
+            ClearArmament_Button.IsEnabled = true;
             Show_Button.Click += Show_Button_Click;
             AddArmament_Button.Click += AddArmament_Button_Click;
             ClearArmament_Button.Click += ClearArmament_Button_Click;
@@ -122,7 +119,7 @@ namespace kb_app.Windows
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception(ex.Message);
+                    MessageBox.Show(ex.Message);
                 }
             }
             else

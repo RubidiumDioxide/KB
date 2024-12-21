@@ -11,5 +11,9 @@ Employee entity: change the YearsOfexperience constraint so that it can be 0 	DO
 Department-dependant entities: add ON UPDATE CASCADE				DONE
 
 
-make it so that when a director is aasigned, that employee gets it's department set to the one he's assigned to automatically
+make it so that when a director is aasigned, that employee gets it's department set to the one he's assigned to automatically 	DONE
+same as above, but with current project 											DONE 
 
+
+modify search for everything 
+basic UI 

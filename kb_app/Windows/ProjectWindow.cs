@@ -20,11 +20,12 @@ namespace kb_app.Windows
         private TextBox Id_TextBox = new TextBox() { Text = "Id (int)" };
         private TextBox Name_TextBox = new TextBox() { Text = "Name (string)" };
         private TextBox Aircraft_TextBox = new TextBox() { Text = "Aircraft (string)" };
-        private TextBox Department_TextBox = new TextBox() { Text = "Department (string)" };
         private TextBox Status_TextBox = new TextBox() { Text = "Status (string)" };
         private TextBox DateBegan_TextBox = new TextBox() { Text = "DateBegan (DateOnly)" };
         private TextBox DateFinished_TextBox = new TextBox() { Text = "DateFinished (DateOnly)" };
         private TextBox ChiefDesigner_TextBox = new TextBox() { Text = "ChiefDesigner (int)" };
+
+        private Button EndProject_Button = new Button() { Content = "End Project" };
 
         public ProjectWindow() : base()
         {
@@ -35,13 +36,16 @@ namespace kb_app.Windows
             Input_StackPanel.Children.Add(Id_TextBox);
             Input_StackPanel.Children.Add(Name_TextBox);
             Input_StackPanel.Children.Add(Aircraft_TextBox);
-            Input_StackPanel.Children.Add(Department_TextBox);
             Input_StackPanel.Children.Add(Status_TextBox);
             Input_StackPanel.Children.Add(DateBegan_TextBox);
             Input_StackPanel.Children.Add(DateFinished_TextBox);
             Input_StackPanel.Children.Add(ChiefDesigner_TextBox);
             Input_StackPanel.Children.Add(Enter_Button); 
-            Input_GroupBox.Content = Input_StackPanel; 
+            Input_GroupBox.Content = Input_StackPanel;
+
+            Controls_StackPanel.Children.Add(EndProject_Button);
+            EndProject_Button.IsEnabled = true;
+            EndProject_Button.Click += EndProject_Button_Click;
         }
 
         private protected override void Edit_Button_Click(object sender, RoutedEventArgs e)
@@ -119,6 +123,28 @@ namespace kb_app.Windows
             TableRefresh();
         }
 
+        private  protected void EndProject_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Table.SelectedItems.Count > 0)
+            {
+                dynamic value = Table.SelectedItem;
+                id = value.Id;
+
+                try
+                {
+                    ProjectTools.EndProject(MainWindow.db, id);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No cell is selected ");
+            }
+        }
+
         private protected override void TableRefresh()
         {
             Table.ItemsSource = null;
@@ -127,7 +153,7 @@ namespace kb_app.Windows
 
         private protected override void InputLayoutUpdate(List<string> _l)
         {
-            List<string> l = new List<string> { "Id (int)", "Name (string)", "Aircraft (string)", "Department (string)", "Status (string)", "DateBegan (DateOnly)", "DateFinished (DateOnly)", "ChiefDesigner (int)" };
+            List<string> l = new List<string> { "Id (int)", "Name (string)", "Aircraft (string)", "Status (string)", "DateBegan (DateOnly)", "DateFinished (DateOnly)", "ChiefDesigner (int)" };
 
             if (action_type == "none" || action_type == "search" || action_type == "add")
             {

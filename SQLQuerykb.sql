@@ -5,11 +5,10 @@ CREATE TABLE [Project] (
 	[ID] int NOT NULL IDENTITY,
 	[Name] nvarchar(200) NOT NULL UNIQUE,
 	[Aircraft] nvarchar (100) NOT NULL,
-	[Department] nvarchar (100) NULL,
-	[Status] nvarchar (50) NOT NULL CHECK([Status] in ('начат','в разработке','завершен', 'отменен')), 
+	[Status] nvarchar (50) NOT NULL DEFAULT 'начат',
 	[Date_began] date NOT NULL, 
 	[Date_finished] date NULL,
-	[Chief_designer] int NULL,
+	[Chief_designer] int NOT NULL,
 	CONSTRAINT [PK_ProjectID] PRIMARY KEY ([ID])
 )
 GO
@@ -59,8 +58,7 @@ CREATE TABLE [Employee] (
 	[Date_of_birth] date NOT NULL, 
 	[Position] nvarchar (50) NOT NULL, 
 	[Department] nvarchar(100) NULL, 
-	[Years_of_experience] tinyint NOT NULL DEFAULT 0 CHECK([Years_of_experience] > 0), 
-	[Current_project] int NULL, 
+	[Years_of_experience] tinyint NOT NULL DEFAULT 0 CHECK([Years_of_experience] >= 0), 
 	[Salary] money NOT NULL DEFAULT 0 CHECK([Salary] > 0),
 	CONSTRAINT [PK_EmployeeID] PRIMARY KEY ([ID])
 )
@@ -69,29 +67,36 @@ GO
 CREATE TABLE [Department] (
 	[Name] nvarchar (100) NOT NULL,
 	[Adress] nvarchar (200) NOT NULL UNIQUE,
-	[Director] int NULL,
+	[Director] int NOT NULL UNIQUE,
 	CONSTRAINT [PK_DepartmentName] PRIMARY KEY ([Name])
 )
 GO
 
+alter table [department]
+add constraint [unique director] UNIQUE ([Director])
+Go
+
+use kb_DB
 CREATE TABLE [Aircraft_Armament](
 	[Aircraft] nvarchar (100) NOT NULL,
 	[Armament] nvarchar (100) NOT NULL,
+	[Quantity] tinyint NOT NULL, 
 	CONSTRAINT [PK_Aircraft_Armament] PRIMARY KEY ([Aircraft], [Armament])
 )
 GO
 
+
 ALTER TABLE [Project]
 	ADD 
-		CONSTRAINT [FK_Aircraft_Project] FOREIGN KEY ([Aircraft]) REFERENCES [Aircraft] ([Name]),
-		CONSTRAINT [FK_Department_Project] FOREIGN KEY ([Department]) REFERENCES [Department] ([Name]),
-		CONSTRAINT [FK_Employee_Project] FOREIGN KEY ([Chief_designer]) REFERENCES [Employee] ([ID]),
-		CONSTRAINT [format_Date_finished] CHECK(Date_finished > Date_began OR Date_finished IS NULL)
+		CONSTRAINT [FK_Aircraft_Project] FOREIGN KEY ([Aircraft]) REFERENCES [Aircraft] ([Name]) ON UPDATE CASCADE ON DELETE NO ACTION,
+		CONSTRAINT [FK_Employee_Project] FOREIGN KEY ([Chief_designer]) REFERENCES [Employee] ([ID]) ON UPDATE NO ACTION ON DELETE NO ACTION,
+		CONSTRAINT [format_Date_finished] CHECK(Date_finished >= Date_began OR Date_finished IS NULL),
+		CONSTRAINT [values_Status] CHECK([Status] in ('начат','в разработке','завершен', 'отменен')) 
 GO 
 
 ALTER TABLE [Aircraft]
 	ADD
-		CONSTRAINT [FK_Engine_Aircraft] FOREIGN KEY ([Engine]) REFERENCES [Engine] ([Name])
+		CONSTRAINT [FK_Engine_Aircraft] FOREIGN KEY ([Engine]) REFERENCES [Engine] ([Name]) ON UPDATE CASCADE ON DELETE SET NULL
 GO 
 
 /*ALTER TABLE [Engine]
@@ -100,7 +105,7 @@ GO*/
 
 ALTER TABLE [Airframe]
 	ADD
-		CONSTRAINT [FK_Aircraft_Airframe] FOREIGN KEY ([Name]) REFERENCES [Aircraft] ([Name]) ON DELETE CASCADE 
+		CONSTRAINT [FK_Aircraft_Airframe] FOREIGN KEY ([Name]) REFERENCES [Aircraft] ([Name]) ON DELETE CASCADE ON UPDATE CASCADE
 GO 
 
 /*ALTER TABLE [Armament]
@@ -109,18 +114,17 @@ GO*/
  
 ALTER TABLE [Employee]
 	ADD
-		CONSTRAINT [FK_Department_Employee] FOREIGN KEY ([Department]) REFERENCES [Department] ([Name]),
-		CONSTRAINT [FK_Project_Employee] FOREIGN KEY ([Current_project]) REFERENCES [Project] ([ID])
+		CONSTRAINT [FK_Department_Employee] FOREIGN KEY ([Department]) REFERENCES [Department] ([Name]) ON UPDATE CASCADE ON DELETE NO ACTION
 GO 
 
+use kb_DB
 ALTER TABLE [Department]
 	ADD
-		CONSTRAINT [Adress_unique] UNIQUE ([Adress]),
-		CONSTRAINT [FK_Employee_Department] FOREIGN KEY ([Director]) REFERENCES [Employee] ([ID]) 
+		CONSTRAINT [FK_Employee_Department] FOREIGN KEY ([Director]) REFERENCES [Employee] ([ID]) ON UPDATE NO ACTION ON DELETE NO ACTION 
 GO 
 
 ALTER TABLE [Aircraft_Armament] 
 	ADD
-		CONSTRAINT [FK_Aircraft_Armament_Aircraft] FOREIGN KEY ([Aircraft]) REFERENCES [Aircraft] ([Name]),
-		CONSTRAINT [FK_Aircraft_Armament_Armament] FOREIGN KEY ([Armament]) REFERENCES [Armament] ([Name])
+		CONSTRAINT [FK_Aircraft_Armament_Aircraft] FOREIGN KEY ([Aircraft]) REFERENCES [Aircraft] ([Name]) ON DELETE CASCADE ON UPDATE CASCADE,
+		CONSTRAINT [FK_Aircraft_Armament_Armament] FOREIGN KEY ([Armament]) REFERENCES [Armament] ([Name]) ON DELETE CASCADE ON UPDATE CASCADE
 GO 

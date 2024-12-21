@@ -22,12 +22,11 @@ namespace kb_back.Tools
             public string Position { get; set; } = null!;
             public string? Department { get; set; }
             public byte YearsOfExperience { get; set; }
-            public int? CurrentProject { get; set; }
             public decimal Salary { get; set; }
 
             public List<string> GetValues()
             {
-                return new List<string> { Id.ToString(), Surname, FirstName, LastName, DateOfBirth.ToString(), Position, Department, YearsOfExperience.ToString(), CurrentProject.ToString(), Salary.ToString() };
+                return new List<string> { Id.ToString(), Surname, FirstName, LastName, DateOfBirth.ToString(), Position, Department, YearsOfExperience.ToString(), Salary.ToString() };
             }            
         }
 
@@ -35,7 +34,7 @@ namespace kb_back.Tools
         {
             db.Employees.Load();
 
-            return db.Employees.Select(e => new EmployeeViewModel { Id = e.Id, Surname = e.Surname, FirstName = e.FirstName, LastName = e.LastName, DateOfBirth = e.DateOfBirth, Position = e.Position, Department = e.Department, YearsOfExperience = e.YearsOfExperience, CurrentProject = e.CurrentProject, Salary = e.Salary }).ToList();
+            return db.Employees.Select(e => new EmployeeViewModel { Id = e.Id, Surname = e.Surname, FirstName = e.FirstName, LastName = e.LastName, DateOfBirth = e.DateOfBirth, Position = e.Position, Department = e.Department, YearsOfExperience = e.YearsOfExperience, Salary = e.Salary }).ToList();
         }
 
         public static void Add(KbDbContext db, List<string> Input)
@@ -86,8 +85,15 @@ namespace kb_back.Tools
         public static void Delete(KbDbContext db, int id)
         {
             db.Employees.Load();
+            db.Departments.Load();
+            db.Projects.Load();
 
             Employee employee = db.Employees.Find(id);
+
+            if (db.Departments.Where(d => d.Director == employee.Id).ToList().Count() != 0 || db.Projects.Where(p => p.ChiefDesigner == employee.Id).ToList().Count() != 0)
+            {
+                throw new Exception("Employee assigned to be a ChiefDesigner or Director. Reassign first, then delete");
+            }
 
             if (employee != null)
             {
@@ -108,7 +114,7 @@ namespace kb_back.Tools
         {
             db.Employees.Load();
 
-            var itemsSource = db.Employees.Local.ToBindingList().Select(e => new EmployeeViewModel { Id = e.Id, Surname = e.Surname, FirstName = e.FirstName, LastName = e.LastName, DateOfBirth = e.DateOfBirth, Position = e.Position, Department = e.Department, YearsOfExperience = e.YearsOfExperience, CurrentProject = e.CurrentProject, Salary = e.Salary });
+            var itemsSource = db.Employees.Local.ToBindingList().Select(e => new EmployeeViewModel { Id = e.Id, Surname = e.Surname, FirstName = e.FirstName, LastName = e.LastName, DateOfBirth = e.DateOfBirth, Position = e.Position, Department = e.Department, YearsOfExperience = e.YearsOfExperience, Salary = e.Salary });
 
             if (Input[0] != "" && Input[0] != "Id (int)")
             {
@@ -190,21 +196,11 @@ namespace kb_back.Tools
                 catch { }
             }
 
-            if (Input[8] != "" && Input[8] != "CurrentProject (int)")
+            if (Input[8] != "" && Input[8] != "Salary (decimal)")
             {
                 try
                 {
-                    int currentProject = int.Parse(Input[8]);
-                    itemsSource = itemsSource.Where(e => e.CurrentProject == currentProject);
-                }
-                catch { }
-            }
-
-            if (Input[9] != "" && Input[9] != "Salary (decimal)")
-            {
-                try
-                {
-                    decimal salary = decimal.Parse(Input[9]);
+                    decimal salary = decimal.Parse(Input[8]);
                     itemsSource = itemsSource.Where(e => e.Salary == salary);
                 }
                 catch { }

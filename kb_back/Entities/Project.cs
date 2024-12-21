@@ -11,25 +11,19 @@ public partial class Project
 
     public string Aircraft { get; set; } = null!;
 
-    public string? Department { get; set; }
-
     public string Status { get; set; } = null!;
 
     public DateOnly DateBegan { get; set; }
 
     public DateOnly? DateFinished { get; set; }
 
-    public int? ChiefDesigner { get; set; }
+    public int ChiefDesigner { get; set; }
 
     public virtual Aircraft AircraftNavigation { get; set; } = null!;
 
-    public virtual Employee? ChiefDesignerNavigation { get; set; }
+    public virtual Employee ChiefDesignerNavigation { get; set; } = null!;
 
-    public virtual Department? DepartmentNavigation { get; set; }
-
-    public virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
-
-    public Project() { } 
+    public Project() { }
 
     public Project(List<string> Input)
     {
@@ -46,27 +40,22 @@ public partial class Project
         Name = Input[1];
 
         if (Input[2] == "") { Aircraft = null!; }
-        else 
+        else
         {
             try { Aircraft = Input[2]; }
-            catch { Aircraft = null!;  }
+            catch { Aircraft = null!; }
         }
 
-        if (Input[3] == "") { Department = null!; }
-        else
-        {
-            try { Department = Input[3]; }
-            catch { Department = null!; }
-        }
+        Status = "начат"; 
 
-        if (Input[4] == "") { Status = "начат"; }
+        /*if (Input[3] == "") { Status = "начат"; }
         else
         {
-            try { Status = Input[4]; }
+            try { Status = Input[3]; }
             catch { Status = "начат"; }
         }
 
-        /*if (Input[5] == "") { DateBegan = DateOnly.FromDateTime(DateTime.Now); }
+        if (Input[5] == "") { DateBegan = DateOnly.FromDateTime(DateTime.Now); }
         else
         {
             try { DateBegan = DateOnly.Parse(Input[5]); }
@@ -74,14 +63,8 @@ public partial class Project
         }*/
 
         DateBegan = DateOnly.FromDateTime(DateTime.Now);
-        DateFinished = null!; 
-
-        if (Input[7] == "") { ChiefDesigner = null!; }
-        else
-        {
-            try { ChiefDesigner = int.Parse(Input[7]); }
-            catch { ChiefDesigner = null!; }
-        }
+        DateFinished = null!;
+        ChiefDesigner = int.Parse(Input[6]);
     }
 
     public void Set(Project p)
@@ -89,7 +72,6 @@ public partial class Project
         Id = p.Id;
         Name = p.Name;
         Aircraft = p.Aircraft;
-        Department = p.Department;
         Status = p.Status;
         DateBegan = p.DateBegan;
         DateFinished = p.DateFinished;

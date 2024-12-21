@@ -27,11 +27,7 @@ public partial class Aircraft
 
     public Aircraft(List<string> Input)
     {
-        Name = Input[0];
-        Type = Input[1];
-        Crew = byte.Parse(Input[2]);
-        Weight = double.Parse(Input[3]);
-        Engine = Input[4];
+        Set(Input);
     }
 
     public void Set(List<string> Input)

@@ -24,7 +24,6 @@ namespace kb_app.Windows
         private TextBox Position_TextBox = new TextBox() { Text = "Position (string)" };
         private TextBox Department_TextBox = new TextBox() { Text = "Department (string)" };
         private TextBox YearsOfExperience_TextBox = new TextBox() { Text = "YearsOfExperience (byte)" };
-        private TextBox CurrentProject_TextBox = new TextBox() { Text = "CurrentProject (int)" };
         private TextBox Salary_TextBox = new TextBox() { Text = "Salary (decimal)" }; 
 
         public EmployeeWindow() : base()
@@ -41,7 +40,6 @@ namespace kb_app.Windows
             Input_StackPanel.Children.Add(Position_TextBox);
             Input_StackPanel.Children.Add(Department_TextBox);
             Input_StackPanel.Children.Add(YearsOfExperience_TextBox);
-            Input_StackPanel.Children.Add(CurrentProject_TextBox);
             Input_StackPanel.Children.Add(Salary_TextBox);
             Input_StackPanel.Children.Add(Enter_Button);
             Input_GroupBox.Content = Input_StackPanel;
@@ -77,7 +75,7 @@ namespace kb_app.Windows
 
                 try
                 {
-                    EmployeeTools.Delete(MainWindow.db, value.Id);
+                    EmployeeTools.Delete(MainWindow.db, value.Id); 
                 }
                 catch (Exception ex)
                 {
@@ -132,7 +130,7 @@ namespace kb_app.Windows
         {
             if (action_type == "none" || action_type == "add" || action_type == "search")
             {
-                List<string> l = new List<string> { "Id (int)", "Surname (string)", "FirstName (string)", "LastName (string)", "DateOfBirth (DateOnly)", "Position (string)", "Department (string)", "YearsOfExperience (byte)", "CurrentProject (int)", "Salary (decimal)" };
+                List<string> l = new List<string> { "Id (int)", "Surname (string)", "FirstName (string)", "LastName (string)", "DateOfBirth (DateOnly)", "Position (string)", "Department (string)", "YearsOfExperience (byte)", "Salary (decimal)" };
                 SetInputTextBoxes(l);
 
                 Enter_Button.IsEnabled = false;

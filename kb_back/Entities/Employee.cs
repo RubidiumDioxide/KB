@@ -21,15 +21,11 @@ public partial class Employee
 
     public byte YearsOfExperience { get; set; }
 
-    public int? CurrentProject { get; set; }
-
     public decimal Salary { get; set; }
 
-    public virtual Project? CurrentProjectNavigation { get; set; }
+    public virtual Department? Department1 { get; set; }
 
     public virtual Department? DepartmentNavigation { get; set; }
-
-    public virtual ICollection<Department> Departments { get; set; } = new List<Department>();
 
     public virtual ICollection<Project> Projects { get; set; } = new List<Project>();
 
@@ -69,10 +65,7 @@ public partial class Employee
 
         YearsOfExperience = byte.Parse(Input[7]);
 
-        try { CurrentProject = int.Parse(Input[8]); }
-        catch { CurrentProject = null!; }
-
-        Salary = decimal.Parse(Input[9]);
+        Salary = decimal.Parse(Input[8]);
     }
 
     public void Set(Employee e)
@@ -85,7 +78,6 @@ public partial class Employee
         Position = e.Position;
         Department = e.Department;
         YearsOfExperience = e.YearsOfExperience;
-        CurrentProject = e.CurrentProject;
         Salary = e.Salary;
     }
 }

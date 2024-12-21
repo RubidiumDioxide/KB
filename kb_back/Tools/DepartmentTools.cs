@@ -46,8 +46,14 @@ namespace kb_back.Tools
         public static void Add(KbDbContext db, List<string> Input) 
         {
             db.Departments.Load();
+            db.Employees.Load();
 
             Department department = new Department(Input);
+            
+            if (db.Departments.Where(d => d.Director == department.Director).ToList().Count() != 0)
+            {
+                throw new Exception("Director has to be unique");
+            }
 
             try
             {
@@ -59,17 +65,27 @@ namespace kb_back.Tools
                 db.Departments.Remove(department);
                 throw new Exception(ex.Message); 
             }
+
+            Employee director = db.Employees.Find(department.Director);
+            director.Department = department.Name; 
+            db.SaveChanges();
         }
 
         public static void Edit(KbDbContext db, string name, List<string> Input)
         {
             db.Departments.Load();
+            db.Employees.Load();
 
             Department department = db.Departments.Find(name);
             Department department_reserve = new Department(department);
 
             if(department != null)
             {
+                if (db.Departments.Where(d => d.Director == department.Director) != null)
+                {
+                    throw new Exception("Director has to be unique");
+                }
+
                 department.Set(Input);
 
                 try
@@ -81,6 +97,10 @@ namespace kb_back.Tools
                     department.Set(department_reserve);
                     throw new Exception(ex.Message); 
                 }
+
+                Employee director = db.Employees.Find(department.Director);
+                director.Department = department.Name;
+                db.SaveChanges();
             }
             else
             {
@@ -116,6 +136,7 @@ namespace kb_back.Tools
         public static List<DepartmentViewModel> Search(KbDbContext db, List<string> Input)
         {
             db.Departments.Load();
+            db.Employees.Load();
 
             var itemsSource = db.Departments.Local.ToBindingList().Join(
                 db.Employees.Local.ToBindingList(),

@@ -126,8 +126,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    double caliber = double.Parse(Input[1]);
-                    itemsSource = itemsSource.Where(a => a.Caliber == caliber);
+                    (double, double) ends = Extensions.GetEnds<double>(Input[1]);
+                    itemsSource = itemsSource.Where(a => (ends.Item1 <= a.Caliber) && (a.Caliber <= ends.Item2));
                 }
                 catch { }
             }
@@ -136,8 +136,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    double firingRate = double.Parse(Input[2]);
-                    itemsSource = itemsSource.Where(a => a.FiringRate == firingRate);
+                    (double, double) ends = Extensions.GetEnds<double>(Input[2]);
+                    itemsSource = itemsSource.Where(a => (ends.Item1 <= a.FiringRate) && (a.FiringRate <= ends.Item2)); 
                 }
                 catch { }
             }
@@ -146,8 +146,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    double weight = double.Parse(Input[3]);
-                    itemsSource = itemsSource.Where(a => a.Weight == weight);
+                    (double, double) ends = Extensions.GetEnds<double>(Input[3]);
+                    itemsSource = itemsSource.Where(a => (ends.Item1 <= a.Weight) && (a.Weight <= ends.Item2));
                 }
                 catch { }
             }
