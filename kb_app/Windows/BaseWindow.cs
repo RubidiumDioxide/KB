@@ -67,6 +67,10 @@ namespace kb_app.Windows
                 {
                     DepartmentTools.Add(MainWindow.db, Input);
                 }
+                if (this.GetType() == typeof(ProjectWindow))
+                {
+                    ProjectTools.Add(MainWindow.db, Input);
+                }
             }
             catch (Exception ex)
             {
@@ -218,6 +222,10 @@ namespace kb_app.Windows
             if (this.GetType() == typeof(DepartmentWindow))
             {
                 Table.ItemsSource = DepartmentTools.Search(MainWindow.db, Input);
+            }
+            if (this.GetType() == typeof(ProjectWindow))
+            {
+                Table.ItemsSource = ProjectTools.Search(MainWindow.db, Input);
             }
         }
 

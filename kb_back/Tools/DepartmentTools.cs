@@ -107,6 +107,10 @@ namespace kb_back.Tools
                     throw new Exception(ex.Message);
                 }
             }
+            else
+            {
+                throw new Exception("null reference");
+            }
         }
 
         public static List<DepartmentViewModel> Search(KbDbContext db, List<string> Input)

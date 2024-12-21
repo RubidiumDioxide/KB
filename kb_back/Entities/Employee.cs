@@ -42,16 +42,7 @@ public partial class Employee
 
     public Employee(Employee e)
     {
-        Id = e.Id;
-        Surname = e.Surname;
-        FirstName = e.FirstName;
-        LastName = e.LastName;
-        DateOfBirth = e.DateOfBirth;
-        Position = e.Position;
-        Department = e.Department;
-        YearsOfExperience = e.YearsOfExperience;
-        CurrentProject = e.CurrentProject;
-        Salary = e.Salary;
+        Set(e);
     }
 
     public void Set(List<string> Input)

@@ -23,7 +23,7 @@ namespace kb_app.Windows
         public static KbDbContext db;
         public EmployeeWindow employeeWindow;
         public DepartmentWindow departmentWindow;
-        //public ProjectWindow projectWindow;
+        public ProjectWindow projectWindow;
         public EngineWindow engineWindow;
         public ArmamentWindow armamentWindow;
         public AirframeWindow airframeWindow;
@@ -61,7 +61,13 @@ namespace kb_app.Windows
 
         private void Project_Button_Click(object sender, RoutedEventArgs e)
         {
+            if (projectWindow == null)
+            {
+                projectWindow = new ProjectWindow();
+            }
 
+            projectWindow.Show();
+            projectWindow.Focus();
         }
 
         private void Engine_Button_Click(object sender, RoutedEventArgs e)

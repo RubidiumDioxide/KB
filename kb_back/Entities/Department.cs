@@ -26,9 +26,7 @@ public partial class Department
 
     public Department(Department d)
     {
-        Name = d.Name;
-        Adress = d.Adress;
-        Director = d.Director;
+        Set(d);
     }
 
     public void Set(List<string> Input)

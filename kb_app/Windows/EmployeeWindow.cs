@@ -32,20 +32,19 @@ namespace kb_app.Windows
             InitializeComponent();
             TableRefresh();
 
-            StackPanel sp = Input_StackPanel;
-            sp.Children.Clear();
-            sp.Children.Add(Id_TextBox);
-            sp.Children.Add(Surname_TextBox);
-            sp.Children.Add(FirstName_TextBox);
-            sp.Children.Add(LastName_TextBox);
-            sp.Children.Add(DateOfBirth_TextBox);
-            sp.Children.Add(Position_TextBox);
-            sp.Children.Add(Department_TextBox);
-            sp.Children.Add(YearsOfExperience_TextBox);
-            sp.Children.Add(CurrentProject_TextBox);
-            sp.Children.Add(Salary_TextBox);
-            sp.Children.Add(Enter_Button); 
-            Input_GroupBox.Content = sp;    
+            Input_StackPanel.Children.Clear();
+            Input_StackPanel.Children.Add(Id_TextBox);
+            Input_StackPanel.Children.Add(Surname_TextBox);
+            Input_StackPanel.Children.Add(FirstName_TextBox);
+            Input_StackPanel.Children.Add(LastName_TextBox);
+            Input_StackPanel.Children.Add(DateOfBirth_TextBox);
+            Input_StackPanel.Children.Add(Position_TextBox);
+            Input_StackPanel.Children.Add(Department_TextBox);
+            Input_StackPanel.Children.Add(YearsOfExperience_TextBox);
+            Input_StackPanel.Children.Add(CurrentProject_TextBox);
+            Input_StackPanel.Children.Add(Salary_TextBox);
+            Input_StackPanel.Children.Add(Enter_Button);
+            Input_GroupBox.Content = Input_StackPanel;
         }
 
         private protected override void Edit_Button_Click(object sender, RoutedEventArgs e)

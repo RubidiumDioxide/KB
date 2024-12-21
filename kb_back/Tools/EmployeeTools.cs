@@ -114,8 +114,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    int id = int.Parse(Input[0]);
-                    itemsSource = itemsSource.Where(e => e.Id == id);
+                    int _id = int.Parse(Input[0]);
+                    itemsSource = itemsSource.Where(e => e.Id == _id);
                 }
                 catch { }
             }

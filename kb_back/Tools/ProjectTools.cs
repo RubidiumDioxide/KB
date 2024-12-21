@@ -1,0 +1,211 @@
+﻿using Microsoft.EntityFrameworkCore;
+//using kb_back.Entities;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Mime;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace kb_back.Tools
+{
+    public static class ProjectTools
+    {
+        public class ProjectViewModel
+        {
+            public int Id { get; set; }
+            public string Name { get; set; } = null!;
+            public string Aircraft { get; set; } = null!;
+            public string? Department { get; set; }
+            public string Status { get; set; } = null!;
+            public DateOnly DateBegan { get; set; }
+            public DateOnly? DateFinished { get; set; }
+            public int? ChiefDesigner { get; set; }
+
+            public List<string> GetValues()
+            {
+                return new List<string> { Id.ToString(), Name, Aircraft, Department, Status, DateBegan.ToString(), DateFinished.ToString().ToString(), ChiefDesigner.ToString() };
+            }
+        }
+
+        public static List<ProjectViewModel> LoadTable(KbDbContext db)
+        {
+            db.Projects.Load();
+
+            return db.Projects.Select(p => new ProjectViewModel { Id = p.Id, Name = p.Name, Aircraft = p.Aircraft, Department = p.Department, Status = p.Status, DateBegan = p.DateBegan, DateFinished = p.DateFinished, ChiefDesigner = p.ChiefDesigner }).ToList();
+        }
+
+        public static void Add(KbDbContext db, List<string> Input)
+        {
+            db.Projects.Load();
+            db.Employees.Load();
+
+            Project project = new Project(Input);
+
+            if(project.ChiefDesigner != null)
+            {
+                Employee chiefDesigner = db.Employees.Find(project.ChiefDesigner);
+                chiefDesigner.CurrentProject = project.Id; 
+            }
+
+            try
+            {
+                db.Projects.Add(project);
+                db.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                db.Projects.Remove(project);
+                throw new Exception(ex.Message); 
+            }
+        }
+
+        public static void Edit(KbDbContext db, int id, List<string> Input)
+        {
+            db.Projects.Load();
+
+            Project project = db.Projects.Find(id);
+            Project project_reserve = new Project(project);
+
+            if (project.ChiefDesigner != null)
+            {
+                Employee chiefDesigner = db.Employees.Find(project.ChiefDesigner);
+                chiefDesigner.CurrentProject = project.Id;
+            }
+
+            if (project != null)
+            {
+                project.Set(Input);
+
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    project.Set(project_reserve);
+                    throw new Exception(ex.Message);
+                }
+            }
+            else
+            {
+                throw new Exception("null reference"); 
+            }
+        }
+
+        public static void Delete(KbDbContext db, int id)
+        {
+            db.Projects.Load();
+
+            Project project = db.Projects.Find(id);
+
+            if(project != null)
+            {
+                try
+                {
+                    db.Projects.Remove(project);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    db.Projects.Add(project);
+                    throw new Exception(ex.Message); 
+                }
+            }
+            else
+            {
+                throw new Exception("null reference");
+            }
+        }
+
+        public static List<ProjectViewModel> Search(KbDbContext db, List<string> Input)
+        {
+            db.Projects.Load();
+
+            var itemsSource = db.Projects.Select(p => new ProjectViewModel { Id = p.Id, Name = p.Name, Aircraft = p.Aircraft, Department = p.Department, Status = p.Status, DateBegan = p.DateBegan, DateFinished = p.DateFinished, ChiefDesigner = p.ChiefDesigner });
+
+            if (Input[0] != "" && Input[0] != "Id (int)")
+            {
+                try
+                {
+                    int _id = int.Parse(Input[0]);
+                    itemsSource = itemsSource.Where(p => p.Id == _id);
+                }
+                catch { }
+            }
+
+            if (Input[1] != "" && Input[1] != "Name (string)")
+            {
+                try
+                {
+                    string name = Input[1];
+                    itemsSource = itemsSource.Where(p => p.Name == name);
+                }
+                catch { }
+            }
+
+            if (Input[2] != "" && Input[2] != "Aircraft (string)")
+            {
+                try
+                {
+                    string aircraft = Input[2];
+                    itemsSource = itemsSource.Where(p => p.Aircraft == aircraft);
+                }
+                catch { }
+            }
+
+            if (Input[3] != "" && Input[3] != "Department (string)")
+            {
+                try
+                {
+                    string department = Input[3];
+                    itemsSource = itemsSource.Where(p => p.Department == department);
+                }
+                catch { }
+            }
+
+            if (Input[4] != "" && Input[4] != "Status (string)")
+            {
+                try
+                {
+                    string status = Input[4];
+                    itemsSource = itemsSource.Where(p => p.Status == status);
+                }
+                catch { }
+            }
+
+            if (Input[5] != "" && Input[5] != "DateBegan (DateOnly)")
+            {
+                try
+                {
+                    DateOnly dateBegan = DateOnly.Parse(Input[5]);
+                    itemsSource = itemsSource.Where(p => p.DateBegan == dateBegan);
+                }
+                catch { }
+            }
+
+            if (Input[6] != "" && Input[6] != "DateFinished (DateOnly)")
+            {
+                try
+                {
+                    DateOnly dateFinished = DateOnly.Parse(Input[6]);
+                    itemsSource = itemsSource.Where(p => p.DateFinished == dateFinished);
+                }
+                catch { }
+            }
+
+            if (Input[7] != "" && Input[7] != "ChiefDesigner (int)")
+            {
+                try
+                {
+                    int chiefDesigner = int.Parse(Input[7]);
+                    itemsSource = itemsSource.Where(p => p.ChiefDesigner == chiefDesigner);
+                }
+                catch { }
+            }
+
+            return itemsSource.ToList(); 
+        }
+    }
+}

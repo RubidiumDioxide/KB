@@ -1,4 +1,5 @@
-﻿using kb_back.Tools;
+﻿using kb_back;
+using kb_back.Tools;
 
 using System.ComponentModel;
 using System.Windows;
@@ -10,7 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
-using kb_back;
 
 namespace kb_app.Windows
 {
@@ -37,7 +37,6 @@ namespace kb_app.Windows
         {
             Table.ItemsSource = null;
             Table.ItemsSource = DepartmentTools.LoadTable(MainWindow.db);
-            //MessageBox.Show("");
         }
 
         private protected override void InputLayoutUpdate(List<string> _l)
