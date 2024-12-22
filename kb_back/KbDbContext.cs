@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.Win32.SafeHandles;
 
 namespace kb_back;
 
 public partial class KbDbContext : DbContext
 {
-    public KbDbContext()
+    private string connectionString;
+
+    public KbDbContext(string _connectionString)
     {
+        connectionString = _connectionString;
     }
 
     public KbDbContext(DbContextOptions<KbDbContext> options)
@@ -33,7 +38,7 @@ public partial class KbDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=WIN-4E7JKGBR3SV\\SQLEXPRESS;Database=kb_DB;TrustServerCertificate=True;Encrypt=False;user id=sa;password=1234;");
+        => optionsBuilder.UseSqlServer(connectionString);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

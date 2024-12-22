@@ -73,3 +73,5 @@ C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\kb_app.pdb
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\kb_app.genruntimeconfig.cache
 C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\ref\kb_app.dll
+C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\Windows\LoginWindow.g.cs
+C:\Users\User\storage\courses\курсач по бд\KB\kb_app\obj\Debug\net8.0-windows\Windows\LoginWindow.baml

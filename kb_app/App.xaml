@@ -3,94 +3,147 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:kb_app"
              StartupUri="Windows\MainWindow.xaml">
+
     <Application.Resources>
         <Style TargetType="Button" x:Key="MainWindowButton_Style">
             <Setter Property="Control.FontFamily" Value="BellMT"/>
             <Setter Property="Control.FontSize" Value="16"/>
-            <Setter Property="Control.FontWeight" Value="Bold"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
             <Setter Property="Control.FontStyle" Value="Italic"/>
             <Setter Property="Control.HorizontalAlignment" Value="Center"/>
-            <Setter Property="Control.Width" Value="300"/>
             <Setter Property="Control.Background" Value="AliceBlue"/>
             <Setter Property="Control.Foreground" Value="#FF244265"/>
-            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.Margin" Value="5"/>
             <Setter Property="Control.BorderThickness" Value="2"/>
             <Setter Property="ItemsControl.BorderBrush" Value= "#FF1C3B5F"/>
+            <Setter Property="Width" Value="150"/>
         </Style>
+
         <Style TargetType="Button" x:Key="BookReaderButton_Style">
             <Setter Property="Control.FontFamily" Value="BellMT"/>
             <Setter Property="Control.FontSize" Value="16"/>
-            <Setter Property="Control.FontWeight" Value="Bold"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
             <Setter Property="Control.FontStyle" Value="Italic"/>
+            <Setter Property="Control.Margin" Value="5"/>
             <Setter Property="Control.HorizontalAlignment" Value="Center"/>
             <Setter Property="Control.Background" Value="White"/>
             <Setter Property="Control.Foreground" Value="#FF263C7E"/>
-            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.Margin" Value="5"/>
             <Setter Property="Control.BorderThickness" Value="2"/>
             <Setter Property="ItemsControl.BorderBrush" Value= "#FF263C7E"/>
+            <Setter Property="Width" Value="150"/>
         </Style>
 
         <Style TargetType="Button" x:Key="BookButton_Style">
             <Setter Property="Control.FontFamily" Value="BellMT"/>
             <Setter Property="Control.FontSize" Value="16"/>
-            <Setter Property="Control.FontWeight" Value="Bold"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
             <Setter Property="Control.FontStyle" Value="Italic"/>
             <Setter Property="Control.HorizontalAlignment" Value="Center"/>
             <Setter Property="Control.Background" Value="#FFF4D6BD"/>
             <Setter Property="Control.Foreground" Value="#FF1C3B5F"/>
-            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.Margin" Value="5"/>
             <Setter Property="Control.BorderThickness" Value="2"/>
             <Setter Property="ItemsControl.BorderBrush" Value= "#FF1C3B5F"/>
+            <Setter Property="Width" Value="150"/>
         </Style>
-
 
         <Style TargetType="TextBox" x:Key="BookReaderTextBox_Style">
             <Setter Property="Control.FontFamily" Value="Monospace"/>
             <Setter Property="Control.FontSize" Value="16"/>
-            <Setter Property="Control.FontWeight" Value="Bold"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
             <Setter Property="Control.FontStyle" Value="Italic"/>
-            <Setter Property="Control.FontSize" Value="14"/>
             <Setter Property="Control.Background" Value="White"/>
             <Setter Property="Control.Foreground" Value="#FF263C7E"/>
-            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.Margin" Value="5"/>
             <Setter Property="Control.BorderThickness" Value="2"/>
-            <Setter Property="Control.Height" Value="23"/>
             <Setter Property="ItemsControl.BorderBrush" Value= "#FF263C7E"/>
         </Style>
 
         <Style TargetType="TextBox" x:Key="BookTextBox_Style">
             <Setter Property="Control.FontFamily" Value="Monospace"/>
             <Setter Property="Control.FontSize" Value="16"/>
-            <Setter Property="Control.FontWeight" Value="Bold"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
             <Setter Property="Control.FontStyle" Value="Italic"/>
-            <Setter Property="Control.FontSize" Value="14"/>
             <Setter Property="Control.Background" Value="#FFF4D6BD"/>
             <Setter Property="Control.Foreground" Value="#FF1C3B5F"/>
-            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.Margin" Value="5"/>
             <Setter Property="Control.BorderThickness" Value="2"/>
-            <Setter Property="Control.Height" Value="23"/>
             <Setter Property="ItemsControl.BorderBrush" Value= "#FF1C3B5F"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Center"/>
         </Style>
 
         <Style TargetType="TextBox" x:Key="InputTextBox_Style">
             <Setter Property="Control.FontFamily" Value="Monospace"/>
             <Setter Property="Control.FontSize" Value="16"/>
-            <Setter Property="Control.FontWeight" Value="Bold"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
             <Setter Property="Control.Background" Value="AliceBlue"/>
             <Setter Property="Control.Foreground" Value="#FF1C3B5F"/>
             <Setter Property="Control.BorderThickness" Value="2"/>
             <Setter Property="ItemsControl.BorderBrush" Value= "#FF1C3B5F"/>
+            <Setter Property="Width" Value="350"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Center"/>
         </Style>
 
-        <Style TargetType="TextBlock" x:Key="BookReaderTextBlock_Style">
+        <Style TargetType="PasswordBox" x:Key="PasswordBox_Style">
             <Setter Property="Control.FontFamily" Value="Monospace"/>
             <Setter Property="Control.FontSize" Value="16"/>
-            <Setter Property="Control.FontWeight" Value="Bold"/>
-            <Setter Property="Control.FontStyle" Value="Italic"/>
-            <Setter Property="Control.FontSize" Value="14"/>
-            <Setter Property="Control.Foreground" Value="#FF263C7E"/>
-            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
+            <Setter Property="Control.Background" Value="AliceBlue"/>
+            <Setter Property="Control.Margin" Value="5"/>
+            <Setter Property="Control.Foreground" Value="#FF1C3B5F"/>
             <Setter Property="Control.BorderThickness" Value="2"/>
+            <Setter Property="ItemsControl.BorderBrush" Value= "#FF1C3B5F"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="BookTextBlock_Style">
+            <Setter Property="Control.FontFamily" Value="Monospace"/>
+            <Setter Property="Control.FontSize" Value="16"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
+            <Setter Property="Control.FontStyle" Value="Italic"/>
+            <Setter Property="Control.Margin" Value="5"/>
+            <Setter Property="Control.FontSize" Value="14"/>
+            <Setter Property="Control.Foreground" Value="WhiteSmoke"/>
+            <Setter Property="Control.BorderThickness" Value="2"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="LogTextBlock_Style">
+            <Setter Property="Control.FontFamily" Value="Monospace"/>
+            <Setter Property="Control.FontSize" Value="14"/>
+            <Setter Property="Control.FontStyle" Value="Italic"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
+            <Setter Property="Control.Foreground" Value="#FF263C7E"/>
+            <Setter Property="Control.Background" Value="AliceBlue"/>
+            <Setter Property="Control.BorderThickness" Value="2"/>
+            <Setter Property="ItemsControl.BorderBrush" Value= "#FF1C3B5F"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType ="CheckBox" x:Key="CheckBox_Style">
+            <Setter Property="Control.FontFamily" Value="Monospace"/>
+            <Setter Property="Control.FontSize" Value="16"/>
+            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
+            <Setter Property="Control.Foreground" Value="#FF1C3B5F"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="DataGridCell" x:Key="DatagridCell_Style">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="MaxWidth" Value="200"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <Style TargetType="DataGrid" x:Key="Datagrid_Style">
+            <Setter Property="AlternatingRowBackground" Value="White"/>
+            <Setter Property="CellStyle" Value="{StaticResource DatagridCell_Style}"/>
+            <Setter Property="HorizontalScrollBarVisibility" Value="Visible"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Visible"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#FF1C3B5F"/>
+            <Setter Property="VerticalGridLinesBrush" Value="#FF1C3B5F"/>
+            <Setter Property="FontSize" Value="14"/>
         </Style>
     </Application.Resources>
 </Application>

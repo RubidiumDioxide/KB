@@ -1,0 +1,21 @@
+﻿<Window x:Class="kb_app.Windows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kb_app.Windows"
+        mc:Ignorable="d"
+        Title="LoginWinndow" 
+        Height="300" Width="280"
+        Background="Cyan">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Background="AliceBlue" Style="{StaticResource LogTextBlock_Style}" Width="136" HorizontalAlignment="Center" Margin="5">Имя пользователя</TextBlock>
+            <TextBox Name = "Username_Textbox" MaxLength="20" TextWrapping="Wrap"  Width="200" Style="{StaticResource InputTextBox_Style}"/>
+            <TextBlock Background="AliceBlue" Style="{StaticResource LogTextBlock_Style}" HorizontalAlignment="Center" Margin="5">Пароль</TextBlock>
+            <PasswordBox Name = "Password_Passwordbox" MaxLength="8" Width="200" Style="{StaticResource PasswordBox_Style}"/>
+            <Button Name="Login_Button" Width="200" Style="{StaticResource MainWindowButton_Style}" Click="Login_Button_Click">Войти</Button>
+        </StackPanel>
+    </Grid>
+</Window>

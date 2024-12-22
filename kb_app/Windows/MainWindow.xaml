@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kb_app.Windows"
         mc:Ignorable="d"
-        Title="KB MainWindow" Height="450" Width="800"
+        Title="KB MainWindow" Height="340" Width="240"
         Background="DarkSeaGreen">
 
     <StackPanel>

@@ -10,8 +10,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 //using Microsoft.EntityFrameworkCore;       remove the usage of EF to kb_back if possible
+
 using System.Data;
 using kb_back;
+using Microsoft.EntityFrameworkCore;
 
 namespace kb_app.Windows
 {
@@ -20,6 +22,11 @@ namespace kb_app.Windows
     /// </summary>
     public partial class MainWindow : Window
     {
+        public LoginWindow loginWindow;
+        public string connectionString = "";
+        private bool isLoginWindowOpened = false; 
+        private string mode = "engineer"; 
+
         public static KbDbContext db;
         public EmployeeWindow employeeWindow;
         public DepartmentWindow departmentWindow;
@@ -34,7 +41,56 @@ namespace kb_app.Windows
             InitializeComponent();
             Application.Current.MainWindow = this;
             Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
-            db = new KbDbContext();
+
+            loginWindow = new LoginWindow();
+            loginWindow.inputEntered += new EventHandler(loginWindowEntered);
+            isLoginWindowOpened = true;
+            loginWindow.Show();
+            loginWindow.Focus();
+
+            Employee_Button.IsEnabled = false; 
+            Department_Button.IsEnabled = false; 
+            Project_Button.IsEnabled = false; 
+            Aircraft_Button.IsEnabled = false; 
+            Engine_Button.IsEnabled = false;
+            Armament_Button.IsEnabled = false; 
+            Airframe_Button.IsEnabled = false; 
+        }
+
+        private void loginWindowEntered(object sender, EventArgs e)
+        {
+            mode = loginWindow.username;
+
+            this.connectionString = "Server=WIN-4E7JKGBR3SV\\SQLEXPRESS;Database=kb_DB;TrustServerCertificate=True;Encrypt=False;user id=" + loginWindow.username + ";password=" + loginWindow.password + ";";
+
+            try
+            {
+                db = new KbDbContext(connectionString);
+                db.Aircraft.Load(); //purely to see if it throws an exception
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return; 
+            }
+
+            loginWindow.Close();
+            isLoginWindowOpened = false;
+
+            if (mode == "engineer")
+            {
+                Aircraft_Button.IsEnabled = true; 
+                Engine_Button.IsEnabled = true; 
+                Armament_Button.IsEnabled = true; 
+                Airframe_Button.IsEnabled = true; 
+  
+            }
+            if(mode == "manager") 
+            {
+                Employee_Button.IsEnabled = true;
+                Department_Button.IsEnabled = true;
+                Project_Button.IsEnabled = true;
+            }
         }
 
         private void Employee_Button_Click(object sender, RoutedEventArgs e)

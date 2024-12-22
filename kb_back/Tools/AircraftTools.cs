@@ -46,20 +46,17 @@ namespace kb_back.Tools
                 throw new Exception(ex.Message);
             }
 
-            db.Airframes.Add(airframe);
-            db.SaveChanges();
-
-            /*try
+            try
             {
                 db.Airframes.Add(airframe);
                 db.SaveChanges();
             }
             catch (Exception ex)
             {
-                db.Aircrafts.Remove(aircraft);
+                db.Aircraft.Remove(aircraft);
                 db.Airframes.Remove(airframe);
                 throw new Exception(ex.Message);
-            }*/
+            }
         }
 
         public static void Edit(KbDbContext db, string name, List<string> Input)
