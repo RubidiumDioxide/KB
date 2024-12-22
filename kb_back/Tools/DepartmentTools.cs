@@ -156,7 +156,7 @@ namespace kb_back.Tools
                 try
                 {
                     string name = Input[0];
-                    itemsSource = itemsSource.Where(d => d.Name == name);
+                    itemsSource = itemsSource.Where(d => d.Name.Contains(name));
                 }
                 catch { }
             }
@@ -166,7 +166,7 @@ namespace kb_back.Tools
                 try
                 {
                     string adress = Input[1];
-                    itemsSource = itemsSource.Where(d => d.Adress == adress);
+                    itemsSource = itemsSource.Where(d => d.Adress.Contains(adress));
                 }
                 catch { }
             }
@@ -176,8 +176,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    int director = int.Parse(Input[2]);
-                    itemsSource = itemsSource.Where(d => d.Director == director);
+                    (int, int) ends = Extensions.GetEnds<int>(Input[2]);
+                    itemsSource = itemsSource.Where(e => (ends.Item1 <= e.Director) && (e.Director <= ends.Item2)); 
                 }
                 catch { }
             }

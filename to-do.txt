@@ -16,4 +16,5 @@ same as above, but with current project 											DONE
 
 
 modify search for everything 
+login window & mechanics
 basic UI 

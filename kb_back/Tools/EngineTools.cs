@@ -105,7 +105,7 @@ namespace kb_back.Tools
                 try 
                 {
                     string name = Input[0];
-                    itemsSource = itemsSource.Where(e => e.Name == name);
+                    itemsSource = itemsSource.Where(e => e.Name.Contains(name));
                 }
                 catch { }
             }
@@ -115,7 +115,7 @@ namespace kb_back.Tools
                 try
                 {
                     string type = Input[1];
-                    itemsSource = itemsSource.Where(e => e.Type == type);
+                    itemsSource = itemsSource.Where(e => e.Type.Contains(type));
                 }
                 catch { }
             }
@@ -125,8 +125,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    double power = double.Parse(Input[2]);
-                    itemsSource = itemsSource.Where(e => e.Power == power);
+                    (double, double) ends = Extensions.GetEnds<double>(Input[2]);
+                    itemsSource = itemsSource.Where(e => (ends.Item1 <= e.Power) && (e.Power <= ends.Item2));
                 }
                 catch { }
             }
@@ -135,8 +135,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    double weight = double.Parse(Input[3]);
-                    itemsSource = itemsSource.Where(a => a.Weight == weight);
+                    (double, double) ends = Extensions.GetEnds<double>(Input[3]);
+                    itemsSource = itemsSource.Where(e => (ends.Item1 <= e.Weight) && (e.Weight <= ends.Item2));
                 }
                 catch { }
             }

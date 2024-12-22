@@ -105,7 +105,7 @@ namespace kb_back.Tools
                 try
                 {
                     string name = Input[0];
-                    itemsSource = itemsSource.Where(a => a.Name == name);
+                    itemsSource = itemsSource.Where(a => a.Name.Contains(name));
                 }
                 catch { }
             }
@@ -115,33 +115,34 @@ namespace kb_back.Tools
                 try
                 {
                     string wingProfile = Input[1];
-                    itemsSource = itemsSource.Where(a => a.WingProfile == wingProfile);
+                    itemsSource = itemsSource.Where(a => a.WingProfile != null).Where(a => a.WingProfile.Contains(wingProfile));
                 }
                 catch { }
             }
 
-            if (Input[2] != "" && Input[2] != "Length (float)")
+            if (Input[2] != "" && Input[2] != "Length (double)")
             {
                 try
                 {
-                    double length = double.Parse(Input[2]);
-                    itemsSource = itemsSource.Where(a => a.Length == length);
+                    (double, double) ends = Extensions.GetEnds<double>(Input[2]);
+                    itemsSource = itemsSource.Where(a => (ends.Item1 <= a.Length) && (a.Length <= ends.Item2));
                 }
                 catch { }
             }
 
-            if (Input[3] != "" && Input[3] != "Wingspan (float)")
+            if (Input[3] != "" && Input[3] != "Wingspan (double)")
             {
                 try
                 {
-                    double wingspan = double.Parse(Input[3]);
-                    itemsSource = itemsSource.Where(a => a.Wingspan == wingspan);
+                    (double, double) ends = Extensions.GetEnds<double>(Input[3]);
+                    itemsSource = itemsSource.Where(a => (ends.Item1 <= a.Wingspan) && (a.Wingspan <= ends.Item2));
                 }
                 catch { }
             }
 
             return itemsSource.ToList();
         }
+        
         public static string GetAirframeString(KbDbContext db, string aircraftName)
         {
             db.Airframes.Load();

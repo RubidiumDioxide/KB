@@ -117,7 +117,7 @@ namespace kb_back.Tools
                 try
                 {
                     string name = Input[0];
-                    itemsSource = itemsSource.Where(a => a.Name == name);
+                    itemsSource = itemsSource.Where(a => a.Name.Contains(name));
                 }
                 catch { }
             }

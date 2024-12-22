@@ -120,8 +120,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    int _id = int.Parse(Input[0]);
-                    itemsSource = itemsSource.Where(e => e.Id == _id);
+                    (int, int) ends = Extensions.GetEnds<int>(Input[0]);
+                    itemsSource = itemsSource.Where(e => (ends.Item1 <= e.Id) && (e.Id <= ends.Item2)); 
                 }
                 catch { }
             }
@@ -131,7 +131,7 @@ namespace kb_back.Tools
                 try
                 {
                     string surname = Input[1];
-                    itemsSource = itemsSource.Where(e => e.Surname == surname);
+                    itemsSource = itemsSource.Where(e => e.Surname.Contains(surname));
                 }
                 catch { }
             }
@@ -141,7 +141,7 @@ namespace kb_back.Tools
                 try
                 {
                     string firstName = Input[2];
-                    itemsSource = itemsSource.Where(e => e.FirstName == firstName);
+                    itemsSource = itemsSource.Where(e => e.FirstName.Contains(firstName));
                 }
                 catch { }
             }
@@ -151,7 +151,7 @@ namespace kb_back.Tools
                 try
                 {
                     string lastName = Input[3];
-                    itemsSource = itemsSource.Where(e => e.LastName == lastName);
+                    itemsSource = itemsSource.Where(e => e.LastName != null).Where(e => e.LastName.Contains(lastName));
                 }
                 catch { }
             }
@@ -160,8 +160,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    DateOnly dateOfBirth = DateOnly.Parse(Input[1]);
-                    itemsSource = itemsSource.Where(e => e.DateOfBirth == dateOfBirth);
+                    (DateOnly, DateOnly) ends = Extensions.GetEnds<DateOnly>(Input[4]);
+                    itemsSource = itemsSource.Where(p => (ends.Item1 <= p.DateOfBirth) && (p.DateOfBirth <= ends.Item2));
                 }
                 catch { }
             }
@@ -171,7 +171,7 @@ namespace kb_back.Tools
                 try
                 {
                     string position = Input[5];
-                    itemsSource = itemsSource.Where(e => e.Position == position);
+                    itemsSource = itemsSource.Where(e => e.Position.Contains(position));
                 }
                 catch { }
             }
@@ -181,7 +181,7 @@ namespace kb_back.Tools
                 try
                 {
                     string department = Input[6];
-                    itemsSource = itemsSource.Where(e => e.Department == department);
+                    itemsSource = itemsSource.Where(e => e.Department != null).Where(e => e.Department.Contains(department));
                 }
                 catch { }
             }
@@ -190,8 +190,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    byte yearsOfExperience = byte.Parse(Input[7]);
-                    itemsSource = itemsSource.Where(e => e.YearsOfExperience == yearsOfExperience);
+                    (byte, byte) ends = Extensions.GetEnds<byte>(Input[7]);
+                    itemsSource = itemsSource.Where(e => (ends.Item1 <= e.YearsOfExperience) && (e.YearsOfExperience <= ends.Item2));
                 }
                 catch { }
             }
@@ -200,8 +200,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    decimal salary = decimal.Parse(Input[8]);
-                    itemsSource = itemsSource.Where(e => e.Salary == salary);
+                    (decimal, decimal) ends = Extensions.GetEnds<decimal>(Input[8]);
+                    itemsSource = itemsSource.Where(e => (ends.Item1 <= e.Salary) && (e.Salary <= ends.Item2));
                 }
                 catch { }
             }

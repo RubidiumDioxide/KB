@@ -118,7 +118,7 @@ namespace kb_back.Tools
                 try
                 {
                     string name = Input[0];
-                    itemsSource = itemsSource.Where(a => a.Name == name);
+                    itemsSource = itemsSource.Where(a => a.Name.Contains(name));
                 }
                 catch { }
             }
@@ -128,7 +128,7 @@ namespace kb_back.Tools
                 try
                 {
                     string type = Input[1];
-                    itemsSource = itemsSource.Where(a => a.Type == type);
+                    itemsSource = itemsSource.Where(a => a.Type != null).Where(a => a.Type.Contains(type));
                 }
                 catch { }
             }
@@ -137,8 +137,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    byte crew = byte.Parse(Input[2]);
-                    itemsSource = itemsSource.Where(a => a.Crew == crew);
+                    (byte, byte) ends = Extensions.GetEnds<byte>(Input[2]);
+                    itemsSource = itemsSource.Where(a => (ends.Item1 <= a.Crew) && (a.Crew <= ends.Item2));
                 }
                 catch { }
             }
@@ -147,8 +147,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    double weight = double.Parse(Input[3]);
-                    itemsSource = itemsSource.Where(a => a.Weight == weight);
+                    (double, double) ends = Extensions.GetEnds<double>(Input[3]);
+                    itemsSource = itemsSource.Where(a => (ends.Item1 <= a.Weight) && (a.Weight <= ends.Item2)); 
                 }
                 catch { }
             }
@@ -158,7 +158,7 @@ namespace kb_back.Tools
                 try
                 {
                     string engine = Input[4];
-                    itemsSource = itemsSource.Where(a => a.Engine == engine);
+                    itemsSource = itemsSource.Where(a => a.Engine != null).Where(a => a.Engine.Contains(engine));
                 }
                 catch { }
             }

@@ -140,8 +140,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    int _id = int.Parse(Input[0]);
-                    itemsSource = itemsSource.Where(p => p.Id == _id);
+                    (int, int) ends = Extensions.GetEnds<int>(Input[0]);
+                    itemsSource = itemsSource.Where(p => (ends.Item1 <= p.Id) && (p.Id <= ends.Item2));
                 }
                 catch { }
             }
@@ -151,7 +151,7 @@ namespace kb_back.Tools
                 try
                 {
                     string name = Input[1];
-                    itemsSource = itemsSource.Where(p => p.Name == name);
+                    itemsSource = itemsSource.Where(p => p.Name.Contains(name));
                 }
                 catch { }
             }
@@ -161,7 +161,7 @@ namespace kb_back.Tools
                 try
                 {
                     string aircraft = Input[2];
-                    itemsSource = itemsSource.Where(p => p.Aircraft == aircraft);
+                    itemsSource = itemsSource.Where(p => p.Aircraft.Contains(aircraft));
                 }
                 catch { }
             }
@@ -171,7 +171,7 @@ namespace kb_back.Tools
                 try
                 {
                     string status = Input[3];
-                    itemsSource = itemsSource.Where(p => p.Status == status);
+                    itemsSource = itemsSource.Where(p => p.Status.Contains(status));
                 }
                 catch { }
             }
@@ -180,8 +180,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    DateOnly dateBegan = DateOnly.Parse(Input[4]);
-                    itemsSource = itemsSource.Where(p => p.DateBegan == dateBegan);
+                    (DateOnly, DateOnly) ends = Extensions.GetEnds<DateOnly>(Input[4]);
+                    itemsSource = itemsSource.Where(p => (ends.Item1 <= p.DateBegan) && (p.DateBegan <= ends.Item2));
                 }
                 catch { }
             }
@@ -190,8 +190,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    DateOnly dateFinished = DateOnly.Parse(Input[5]);
-                    itemsSource = itemsSource.Where(p => p.DateFinished == dateFinished);
+                    (DateOnly, DateOnly) ends = Extensions.GetEnds<DateOnly>(Input[5]);
+                    itemsSource = itemsSource.Where(p => (ends.Item1 <= p.DateFinished) && (p.DateFinished <= ends.Item2));
                 }
                 catch { }
             }
@@ -200,8 +200,8 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    int chiefDesigner = int.Parse(Input[6]);
-                    itemsSource = itemsSource.Where(p => p.ChiefDesigner == chiefDesigner);
+                    (int, int) ends = Extensions.GetEnds<int>(Input[6]);
+                    itemsSource = itemsSource.Where(p => (ends.Item1 <= p.ChiefDesigner) && (p.ChiefDesigner <= ends.Item2));
                 }
                 catch { }
             }
