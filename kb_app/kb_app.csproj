@@ -6,10 +6,23 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\BaseWindow_bg.jpg" />
     <None Remove="Resources\bg_airframe.jpg" />
+    <None Remove="Resources\GOST_A.TTF" />
+    <None Remove="Resources\MainWindow_bg.jpg" />
+    <None Remove="Resources\ShowAircraftWindow_bg.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\BaseWindow_bg.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,9 +30,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Fonts\GOST_A.TTF" />
+    <Resource Include="Resources\MainWindow_bg.jpg" />
     <Resource Include="Resources\bg_airframe.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\ShowAircraftWindow_bg.jpg" />
   </ItemGroup>
 
 </Project>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static kb_back.Tools.ArmamentTools;
+using static kb_back.Tools.EngineTools;
 
 namespace kb_back.Tools
 {
@@ -143,7 +144,7 @@ namespace kb_back.Tools
             return itemsSource.ToList();
         }
         
-        public static string GetAirframeString(KbDbContext db, string aircraftName)
+        public static List<AirframeViewModel> GetAirframeString(KbDbContext db, string aircraftName)
         {
             db.Airframes.Load();
             db.Aircraft.Load();
@@ -153,11 +154,14 @@ namespace kb_back.Tools
 
             if (aircraft != null && airframe != null)
             {
-                return airframe.Name + airframe.WingProfile + airframe.Length.ToString() + airframe.Wingspan.ToString();
+                AirframeViewModel a = new AirframeViewModel { Name = airframe.Name, WingProfile = airframe.WingProfile, Length = airframe.Length, Wingspan = airframe.Wingspan };
+                List<AirframeViewModel> list = new List<AirframeViewModel>();
+                list.Add(a);
+                return list;
             }
             else
             {
-                return "";
+                return null;
             }
         }
     }

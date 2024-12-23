@@ -5,12 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kb_app.Windows"
         mc:Ignorable="d"
-        Title="ShowAircraftWindow" Height="450" Width="800">
+        Title="ShowAircraftWindow"
+        SizeToContent="WidthAndHeight">
+
+    <Window.Background>
+        <ImageBrush ImageSource="..\Resources\ShowAircraftWindow_bg.jpg" Stretch="UniformToFill"></ImageBrush>
+    </Window.Background>
+
     <Grid>
         <StackPanel>
-            <TextBlock x:Name="Engine_TextBlock"/>
-            <TextBlock x:Name="Airframe_TextBlock"/>
-            <DataGrid x:Name="AircraftsArmament_Table" AutoGenerateColumns="True" IsReadOnly="True"/>
+            <TextBlock x:Name="Misc_1_TextBlock" HorizontalAlignment="Center" Style="{StaticResource TextBlock_Style}" Text="Характеристики двигателя: "/>
+            <DataGrid x:Name="Engine_DataGrid" AutoGenerateColumns="True" IsReadOnly="True" Style="{StaticResource Datagrid_Style}"/>
+            <TextBlock x:Name="Misc_2_TextBlock" HorizontalAlignment="Center" Style="{StaticResource TextBlock_Style}" Text="Характеристики планера: "/>
+            <DataGrid x:Name="Airframe_Datagrid" AutoGenerateColumns="True" IsReadOnly="True" Style="{StaticResource Datagrid_Style}"/>
+            <TextBlock x:Name="Misc_3_TextBlock" HorizontalAlignment="Center" Style="{StaticResource TextBlock_Style}" Text="Набор вооружения: "/>
+            <DataGrid x:Name="AircraftsArmament_Table" AutoGenerateColumns="True" IsReadOnly="True" Style="{StaticResource Datagrid_Style}"/>
         </StackPanel>
     </Grid>
 </Window>

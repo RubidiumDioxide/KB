@@ -90,7 +90,7 @@ ALTER TABLE [Project]
 	ADD 
 		CONSTRAINT [FK_Aircraft_Project] FOREIGN KEY ([Aircraft]) REFERENCES [Aircraft] ([Name]) ON UPDATE CASCADE ON DELETE NO ACTION,
 		CONSTRAINT [FK_Employee_Project] FOREIGN KEY ([Chief_designer]) REFERENCES [Employee] ([ID]) ON UPDATE NO ACTION ON DELETE NO ACTION,
-		CONSTRAINT [format_Date_finished] CHECK(Date_finished >= Date_began OR Date_finished IS NULL),
+		CONSTRAINT [format_Date_finished] CHECK(Date_finished > Date_began OR Date_finished = Date_began OR Date_finished IS NULL),
 		CONSTRAINT [values_Status] CHECK([Status] in ('начат','в разработке','завершен', 'отменен')) 
 GO 
 

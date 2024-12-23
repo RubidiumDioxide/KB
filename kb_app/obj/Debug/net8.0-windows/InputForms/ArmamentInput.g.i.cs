@@ -84,7 +84,7 @@ namespace kb_app {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/kb_app;component/inputforms/armamentinput.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/kb_app;V1.0.0.0;component/inputforms/armamentinput.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\InputForms\ArmamentInput.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

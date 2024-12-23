@@ -6,16 +6,22 @@
         xmlns:local="clr-namespace:kb_app.Windows"
         mc:Ignorable="d"
         Title="LoginWinndow" 
-        Height="300" Width="280"
-        Background="Cyan">
+        Height="300" Width="280">
 
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5, 1" StartPoint="0.5, 0">
+            <GradientStop Color="#1A4D7B" Offset="0"/>
+            <GradientStop Color="Aqua" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    
     <Grid>
         <StackPanel>
-            <TextBlock Background="AliceBlue" Style="{StaticResource LogTextBlock_Style}" Width="136" HorizontalAlignment="Center" Margin="5">Имя пользователя</TextBlock>
-            <TextBox Name = "Username_Textbox" MaxLength="20" TextWrapping="Wrap"  Width="200" Style="{StaticResource InputTextBox_Style}"/>
-            <TextBlock Background="AliceBlue" Style="{StaticResource LogTextBlock_Style}" HorizontalAlignment="Center" Margin="5">Пароль</TextBlock>
+            <TextBlock Style="{StaticResource TextBlock_Style}" >Имя пользователя</TextBlock>
+            <TextBox Name = "Username_Textbox" MaxLength="20" TextWrapping="Wrap"  Width="200" Style="{StaticResource TextBox_Style}"/>
+            <TextBlock Style="{StaticResource TextBlock_Style}" HorizontalAlignment="Center" Margin="5">Пароль</TextBlock>
             <PasswordBox Name = "Password_Passwordbox" MaxLength="8" Width="200" Style="{StaticResource PasswordBox_Style}"/>
-            <Button Name="Login_Button" Width="200" Style="{StaticResource MainWindowButton_Style}" Click="Login_Button_Click">Войти</Button>
+            <Button Name="Login_Button" Width="200" Style="{StaticResource Button_Style}" Click="Login_Button_Click">Войти</Button>
         </StackPanel>
     </Grid>
 </Window>

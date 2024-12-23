@@ -5,16 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kb_app.Windows"
         mc:Ignorable="d"
-        Title="KB MainWindow" Height="340" Width="240"
-        Background="DarkSeaGreen">
+        Title="KB MainWindow" Height="340" Width="240">
+
+    <Window.Background>
+        <ImageBrush ImageSource="..\Resources\MainWindow_bg.jpg" Stretch="UniformToFill"></ImageBrush>
+    </Window.Background>
 
     <StackPanel>
-        <Button x:Name="Employee_Button" Content="Сотрудники" Click="Employee_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
-        <Button x:Name="Department_Button" Content="Отделы" Click="Department_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
-        <Button x:Name="Project_Button" Content="Проекты" Click="Project_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
-        <Button x:Name="Aircraft_Button" Content="Самолеты" Click="Aircraft_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
-        <Button x:Name="Engine_Button" Content="Двигатели" Click="Engine_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
-        <Button x:Name="Armament_Button" Content="Вооружение" Click="Armament_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
-        <Button x:Name="Airframe_Button" Content="Планеры" Click="Airframe_Button_Click" Style="{StaticResource MainWindowButton_Style}"/>
+        <Button x:Name="Employee_Button" Content="Сотрудники" Click="Employee_Button_Click" Style="{StaticResource Button_Style}"/>
+        <Button x:Name="Department_Button" Content="Отделы" Click="Department_Button_Click" Style="{StaticResource Button_Style}"/>
+        <Button x:Name="Project_Button" Content="Проекты" Click="Project_Button_Click" Style="{StaticResource Button_Style}"/>
+        <Button x:Name="Aircraft_Button" Content="Самолеты" Click="Aircraft_Button_Click" Style="{StaticResource Button_Style}"/>
+        <Button x:Name="Engine_Button" Content="Двигатели" Click="Engine_Button_Click" Style="{StaticResource Button_Style}"/>
+        <Button x:Name="Armament_Button" Content="Вооружение" Click="Armament_Button_Click" Style="{StaticResource Button_Style}"/>
+        <Button x:Name="Airframe_Button" Content="Планеры" Click="Airframe_Button_Click" Style="{StaticResource Button_Style}"/>
     </StackPanel>
 </Window>

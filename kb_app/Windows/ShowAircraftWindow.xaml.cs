@@ -40,14 +40,8 @@ namespace kb_app.Windows
 
         private void ContentRefresh()
         {
-            string l = EngineTools.GetEngineString(MainWindow.db, aircraftName);
-
-            Engine_TextBlock.Text = l;
-
-
-            l = AirframeTools.GetAirframeString(MainWindow.db, aircraftName);
-            
-            Airframe_TextBlock.Text = l;
+            Engine_DataGrid.ItemsSource = EngineTools.GetEngineString(MainWindow.db, aircraftName);
+            Airframe_Datagrid.ItemsSource = AirframeTools.GetAirframeString(MainWindow.db, aircraftName);
 
             AircraftsArmament_Table.ItemsSource = null;
             AircraftsArmament_Table.ItemsSource = ArmamentTools.GetArmamentsList(MainWindow.db, aircraftName);

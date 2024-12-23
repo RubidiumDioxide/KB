@@ -7,14 +7,18 @@
         mc:Ignorable="d"
         Title="Window" 
         Height="450" 
-        Width="800"
-        Background="MediumAquamarine">
+        Width="800">
 
-    <Grid x:Name="grid">
+    <Window.Background>
+        <ImageBrush ImageSource="..\Resources\BaseWindow_bg.jpg" Stretch="Fill"></ImageBrush>
+    </Window.Background>
+
+
+    <Grid x:Name="grid" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -22,27 +26,20 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <GroupBox>
+        <GroupBox x:Name="Controls_GroupBox" Header="Controls" Style="{StaticResource GroupBox_Style}">
             <StackPanel x:Name="Controls_StackPanel" Orientation="Vertical" Grid.Row="0" Grid.Column="0">
-            <Button x:Name="Add_Button" Click="Add_Button_Click">Add</Button>
-            <Button x:Name="Edit_Button" Click="Edit_Button_Click">Edit</Button>
-            <Button x:Name="Delete_Button" Click="Delete_Button_Click">Delete</Button>
-            <Button x:Name="Search_Button" Click="Search_Button_Click">Search</Button>
-        </StackPanel>
+                <Button x:Name="Add_Button" Click="Add_Button_Click" Style="{StaticResource Button_Style}">Add</Button>
+                <Button x:Name="Edit_Button" Click="Edit_Button_Click" Style="{StaticResource Button_Style}">Edit</Button>
+                <Button x:Name="Delete_Button" Click="Delete_Button_Click" Style="{StaticResource Button_Style}">Delete</Button>
+                <Button x:Name="Search_Button" Click="Search_Button_Click" Style="{StaticResource Button_Style}">Search</Button>
+            </StackPanel>
         </GroupBox>
-        
-        <DataGrid Name="Table" AutoGenerateColumns="True" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True" Grid.Row="0" Grid.Column="1"/>
 
-        <!--ContentControl x:Name="contentControl" Grid.Row="0" Grid.Column ="2" Grid.RowSpan="2"></ContentControl-->
+        <DataGrid Name="Table" AutoGenerateColumns="True" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True" Grid.Row="0" Grid.Column="1" Style="{StaticResource Datagrid_Style}"/>
 
-        <GroupBox x:Name="Input_GroupBox"  Header="Entry fields" Padding="5" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2">
+        <GroupBox x:Name="Input_GroupBox"  Header="Entry fields" Padding="5" Grid.Column="2" Grid.Row="0" Style="{StaticResource GroupBox_Style}">
             <StackPanel x:Name="Input_StackPanel" Orientation="Vertical">
-                <!--TextBox x:Name="Name_TextBox">Name (string)</TextBox>
-                <TextBox x:Name="Caliber_TextBox">Caliber (float)</TextBox>
-                <TextBox x:Name="FiringRate_TextBox">Firing rate (float)</TextBox>
-                <TextBox x:Name="Weight_TextBox">Weight (float)</TextBox-->
-
-                <Button x:Name="Enter_Button" Click = "Enter_Button_Click" IsEnabled="False" Visibility="Collapsed">Enter</Button>
+                <Button x:Name="Enter_Button" Click = "Enter_Button_Click" IsEnabled="False" Visibility="Collapsed" Style="{StaticResource Button_Style}">Enter</Button>
             </StackPanel>
         </GroupBox>
     </Grid>

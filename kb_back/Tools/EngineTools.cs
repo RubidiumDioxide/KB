@@ -144,7 +144,7 @@ namespace kb_back.Tools
             return itemsSource.ToList();
         }
 
-        public static string GetEngineString(KbDbContext db, string aircraftName)
+        public static List<EngineViewModel> GetEngineString(KbDbContext db, string aircraftName)
         {
             db.Engines.Load();
             db.Aircraft.Load();
@@ -153,11 +153,15 @@ namespace kb_back.Tools
             Engine engine = db.Engines.Find(aircraft.Engine);
 
             if (aircraft != null && engine != null)
-            { 
-                return engine.Name + engine.Type + engine.Power.ToString() + engine.Weight.ToString();   
+            {
+                EngineViewModel e = new EngineViewModel { Name = engine.Name, Type = engine.Type, Power = engine.Power, Weight = engine.Weight };
+                List<EngineViewModel> list = new List<EngineViewModel>();
+                list.Add(e);
+                return list;
             }
-            else{
-                return "";
+            else
+            {
+                return null;
             }
         }
     }

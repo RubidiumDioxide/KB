@@ -66,7 +66,14 @@ namespace kb_app.Windows
             try
             {
                 db = new KbDbContext(connectionString);
-                db.Aircraft.Load(); //purely to see if it throws an exception
+                db.Aircraft.Load();
+                db.AircraftArmaments.Load(); 
+                db.Airframes.Load();
+                db.Armaments.Load(); 
+                db.Departments.Load(); 
+                db.Employees.Load(); 
+                db.Engines.Load(); 
+                db.Projects.Load(); 
             }
             catch(Exception ex)
             {

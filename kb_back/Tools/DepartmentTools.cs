@@ -81,7 +81,7 @@ namespace kb_back.Tools
 
             if(department != null)
             {
-                if (db.Departments.Where(d => d.Director == department.Director) != null)
+                if (db.Departments.Where(d => d.Director == department.Director && d != department).ToList().Count() != 0 )
                 {
                     throw new Exception("Director has to be unique");
                 }

@@ -14,8 +14,20 @@ namespace kb_back.Tools
             public string? Engine { get; set; }
             public List<string> GetValues()
             {
-                List<string> l = new List<string> { Name, Type, Crew.ToString(), Weight.ToString(), Engine.ToString() };
+                string engine; 
+
+                if (Engine == null)
+                {
+                    engine = "";
+                }
+                else
+                {
+                    engine = Engine.ToString();
+                }
+
+                List<string> l = new List<string> { Name, Type, Crew.ToString(), Weight.ToString(), engine };
                 return l;
+
             }
         }
 

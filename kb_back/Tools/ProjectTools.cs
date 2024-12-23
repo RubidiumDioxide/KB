@@ -114,13 +114,17 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    project.Status = "завершен";
-                    project.DateFinished = DateOnly.FromDateTime(DateTime.Now); 
-                    db.SaveChanges();  
+                    if (DateOnly.FromDateTime(DateTime.Now) >= project.DateBegan && project.Status != "завершен")
+                    {
+                        project.Status = "завершен";
+                        project.DateFinished = DateOnly.FromDateTime(DateTime.Now);
+                        db.SaveChanges();
+                    }
                 }
                 catch (Exception ex)
                 {
-                    project = project_reserve;
+                    project.DateFinished = null; 
+                    project.Status = project_reserve.Status;
                     throw new Exception(ex.Message);
                 }
             }
