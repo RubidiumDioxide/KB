@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("kb_back")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5fcafee98f6419dab75e8e12046d3635b46d312")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d49ddad23ca40723825ac37f267f9b8987976ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("kb_back")]
 [assembly: System.Reflection.AssemblyTitleAttribute("kb_back")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

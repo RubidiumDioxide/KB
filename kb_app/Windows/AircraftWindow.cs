@@ -34,11 +34,11 @@ namespace kb_app.Windows
         private TextBox Weight_Textbox = new TextBox() { Text = "Weight (double)" };
         private TextBox Engine_Textbox = new TextBox() { Text = "Engine (string)" };
 
-        private TextBox Armament_Textbox = new TextBox() { Text = "Armament (string)" };
+        private TextBox Armament_Textbox = new TextBox() { Text = "Armament (string)", Style = App.Current.Resources["TextBox_Style"] as Style };
 
-        private Button Show_Button = new Button() { Content = "Show" };
-        private Button AddArmament_Button = new Button() { Content = "Add Armament" };
-        private Button ClearArmament_Button = new Button() { Content = "Clear Armament" };
+        private Button Show_Button = new Button() { Content = "Show", Style = App.Current.Resources["Button_Style"] as Style };
+        private Button AddArmament_Button = new Button() { Content = "Add Armament", Style = App.Current.Resources["Button_Style"] as Style };
+        private Button ClearArmament_Button = new Button() { Content = "Clear Armament", Style = App.Current.Resources["Button_Style"] as Style };
 
         private ShowAircraftWindow showAircraftWindow = new ShowAircraftWindow();
 

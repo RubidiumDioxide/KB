@@ -114,7 +114,7 @@ namespace kb_back.Tools
             {
                 try
                 {
-                    if (DateOnly.FromDateTime(DateTime.Now) >= project.DateBegan && project.Status != "завершен")
+                    if (project.Status != "завершен")
                     {
                         project.Status = "завершен";
                         project.DateFinished = DateOnly.FromDateTime(DateTime.Now);

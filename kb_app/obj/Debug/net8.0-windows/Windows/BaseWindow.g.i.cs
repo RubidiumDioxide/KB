@@ -141,7 +141,7 @@ namespace kb_app.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/kb_app;V1.0.0.0;component/windows/basewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/kb_app;component/windows/basewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Windows\BaseWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

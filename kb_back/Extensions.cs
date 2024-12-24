@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using static System.ComponentModel.TypeConverter;
 
 namespace kb_back
-{ 
+{
     public static class Extensions
     {
         internal class ValueCache
@@ -48,7 +48,7 @@ namespace kb_back
 
         public static T ChangeType<T>(this string s)
         {
-            if(typeof(T) == typeof(DateOnly))
+            if (typeof(T) == typeof(DateOnly))
             {
                 return (T)Convert.ChangeType(DateOnly.Parse(s), typeof(T));
             }
@@ -68,9 +68,9 @@ namespace kb_back
                     if (s[..i] == "") { a = ValueCache.GetMinValue(typeof(T)).ChangeType<T>(); }
                     else { a = s[..i].ChangeType<T>(); }
 
-                    if (s[(i+1)..] == "") {  b = ValueCache.GetMaxValue(typeof(T)).ChangeType<T>(); }
+                    if (s[(i + 1)..] == "") { b = ValueCache.GetMaxValue(typeof(T)).ChangeType<T>(); }
                     else { b = s[(i + 1)..].ChangeType<T>(); }
-                    
+
                     return (a, b);
                 }
                 catch (Exception ex)

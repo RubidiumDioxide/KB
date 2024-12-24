@@ -3,15 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_back\\tools\\projecttools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|solutionrelative:tools\\projecttools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{745FD4BB-1C9D-40DB-8592-279429F803F8}|..\\kb_app\\kb_app.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_app\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_back\\entities\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}|kb_back.csproj|solutionrelative:entities\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{745FD4BB-1C9D-40DB-8592-279429F803F8}|..\\kb_app\\kb_app.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_app\\windows\\projectwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{745FD4BB-1C9D-40DB-8592-279429F803F8}|..\\kb_app\\kb_app.csproj|c:\\users\\user\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\kb\\kb_app\\windows\\aircraftwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,7 +16,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 150,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -29,41 +24,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Project.cs",
-              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Entities\\Project.cs",
-              "RelativeDocumentMoniker": "Entities\\Project.cs",
-              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Entities\\Project.cs",
-              "RelativeToolTip": "Entities\\Project.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAA/wEoAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T13:54:02.807Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProjectWindow.cs",
-              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\Windows\\ProjectWindow.cs",
-              "RelativeDocumentMoniker": "..\\kb_app\\Windows\\ProjectWindow.cs",
-              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\Windows\\ProjectWindow.cs",
-              "RelativeToolTip": "..\\kb_app\\Windows\\ProjectWindow.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAYwDoAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T13:47:13.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProjectTools.cs",
-              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Tools\\ProjectTools.cs",
-              "RelativeDocumentMoniker": "Tools\\ProjectTools.cs",
-              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_back\\Tools\\ProjectTools.cs",
-              "RelativeToolTip": "Tools\\ProjectTools.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAqwH4AAAA8AAAAAAAAAA==",
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\App.xaml",
+              "RelativeDocumentMoniker": "..\\kb_app\\App.xaml",
+              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\App.xaml",
+              "RelativeToolTip": "..\\kb_app\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-24T09:35:58.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AircraftWindow.cs",
+              "DocumentMoniker": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\Windows\\AircraftWindow.cs",
+              "RelativeDocumentMoniker": "..\\kb_app\\Windows\\AircraftWindow.cs",
+              "ToolTip": "C:\\Users\\User\\storage\\courses\\\u043A\u0443\u0440\u0441\u0430\u0447 \u043F\u043E \u0431\u0434\\KB\\kb_app\\Windows\\AircraftWindow.cs",
+              "RelativeToolTip": "..\\kb_app\\Windows\\AircraftWindow.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACQAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T13:37:53.674Z",
+              "WhenOpened": "2024-12-24T09:30:00.509Z",
               "EditorCaption": ""
             }
           ]

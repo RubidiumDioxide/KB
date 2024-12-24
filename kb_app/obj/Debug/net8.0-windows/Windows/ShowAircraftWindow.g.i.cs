@@ -101,7 +101,7 @@ namespace kb_app.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/kb_app;V1.0.0.0;component/windows/showaircraftwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/kb_app;component/windows/showaircraftwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Windows\ShowAircraftWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

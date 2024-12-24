@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kb_back", "kb_back.csproj", "{52DDD114-BCAF-45B4-A5D9-3BE737BFED2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kb_app", "..\kb_app\kb_app.csproj", "{745FD4BB-1C9D-40DB-8592-279429F803F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kb_app", "..\kb_app\kb_app.csproj", "{745FD4BB-1C9D-40DB-8592-279429F803F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

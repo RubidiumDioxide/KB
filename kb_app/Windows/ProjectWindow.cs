@@ -143,6 +143,8 @@ namespace kb_app.Windows
             {
                 MessageBox.Show("No cell is selected ");
             }
+
+            TableRefresh();
         }
 
         private protected override void TableRefresh()
